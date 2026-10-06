@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liquid Machine | Websites, social media and dashboards for small business</title>
+<meta name="description" content="Liquid Machine builds websites, sets up social media, shapes brands, and creates custom productivity dashboards for small businesses.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Liquid Machine">
+<meta property="og:description" content="Websites, social media, branding and custom dashboards for small business.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#161E2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sheet:#EDEFEC;      /* cool grey-green paper */
+  --paper:#FFFFFF;
+  --ink:#161E2B;        /* deep slate */
+  --ink-soft:#4A5463;
+  --signal:#3AA57C;     /* spruce */
+  --signal-deep:#C93E16;
+  --signal-hover:#4DB98F;
+  --signal-soft:#8FD6B8;
+  --signal-tint:rgba(58,165,124,.2);
+  --signal-pale:#BFE5D5;
+  --pill-bg:#FBEBC4;
+  --pill-fg:#7A5400;
+  --on-signal:#161E2B;
+  --pine:#1F5C4D;       /* secondary, used sparingly */
+  --line:#D3D8D4;
+  --r-lg:28px; --r-sm:12px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--sheet);color:var(--ink);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+/* header */
+header{padding:22px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.mark{width:36px;height:36px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font:800 .95rem "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;position:relative}
+.mark::after{content:"";position:absolute;right:5px;top:5px;width:6px;height:6px;border-radius:2px;background:var(--signal)}
+nav{display:flex;gap:26px;align-items:center;font-weight:500}
+nav a{text-decoration:none;color:var(--ink-soft)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--signal);color:var(--on-signal);font-weight:600;text-decoration:none;padding:14px 26px;border-radius:999px;transition:transform .15s,background .15s;border:0;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn:hover{background:var(--signal-hover);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+nav .btn{padding:10px 20px}
+
+/* hero */
+.hero{padding:40px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.7rem,5.4vw,4.9rem);font-weight:800;margin-bottom:22px}
+.hero p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:34ch;margin-bottom:32px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* hero composition: three overlapping pieces of work */
+.stage{position:relative;min-height:470px}
+.win{position:absolute;left:0;top:36px;width:66%;background:var(--paper);border-radius:18px;box-shadow:0 30px 60px -28px rgba(22,30,43,.4);overflow:hidden}
+.win .bar{display:flex;gap:6px;padding:12px 14px;background:#E3E6E2}
+.win .bar i{width:10px;height:10px;border-radius:50%;background:#B9C0BB}
+.win .body{padding:26px 24px 28px}
+.win .tag{font:600 .8rem "Instrument Sans",sans-serif;color:var(--pine)}
+.win h4{font:800 1.7rem/1.05 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:8px 0 14px}
+.win .ln{height:9px;border-radius:5px;background:#E3E6E2;margin-bottom:8px}
+.win .ln.s{width:62%}
+.win .cta{display:inline-block;margin-top:14px;background:var(--signal);border-radius:999px;padding:9px 20px;font:600 .9rem "Instrument Sans",sans-serif}
+.win .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+.win .tiles b{height:44px;border-radius:10px;background:#E3E6E2}
+.win .tiles b:nth-child(2){background:var(--ink)}
+.win .tiles b:nth-child(3){background:var(--signal-pale)}
+.board-mini{position:absolute;right:0;bottom:0;width:62%;background:var(--ink);color:#fff;border-radius:18px;padding:18px;box-shadow:0 30px 60px -28px rgba(22,30,43,.6)}
+.board-mini small{color:#A9B2BF;font-size:.8rem}
+.board-mini .row{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(255,255,255,.08);border-radius:10px;padding:10px 12px;margin-top:9px;font-size:.9rem}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:8px}
+.d1{background:#58C7A6}.d2{background:#E5A823}.d3{background:#8EA4BF}
+.post{position:absolute;right:2%;top:0;width:30%;background:var(--paper);border-radius:16px;padding:12px;transform:rotate(3deg);box-shadow:0 24px 50px -24px rgba(22,30,43,.45)}
+.post .img{aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,var(--signal) 0 55%,var(--ink) 55%)}
+.post p{font-size:.78rem;color:var(--ink-soft);margin-top:8px;line-height:1.35}
+.win,.board-mini,.post{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.board-mini{animation-delay:.15s}.post{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+.post{animation-name:rise-post}
+@keyframes rise-post{from{opacity:0;transform:translateY(18px) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.win,.board-mini,.post{animation:none}}
+
+/* services */
+.services{background:var(--ink);color:#fff;padding:96px 0;border-radius:var(--r-lg) var(--r-lg) 0 0}
+.services .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.services h2{font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:800;position:sticky;top:32px;align-self:start}
+.services h2 span{display:block;color:var(--signal-soft);font-weight:400;font-size:.45em;letter-spacing:0;margin-top:18px;line-height:1.5;max-width:30ch;font-family:"Instrument Sans",sans-serif}
+.svc{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;padding:28px 0;border-top:1px solid rgba(255,255,255,.18)}
+.svc:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
+.svc .art{width:150px;height:103px;border-radius:16px;background:#1F2A3B;display:grid;place-items:center;overflow:hidden}
+.svc .art svg{width:100%;height:100%}
+.svc .art text{font-family:"Bricolage Grotesque",sans-serif}
+.svc h3{font-size:1.7rem;font-weight:600;margin-bottom:8px}
+.svc p{color:#C4CAD3;max-width:46ch}
+
+/* dashboard showcase */
+.board{padding:100px 0;background:var(--paper)}
+.board .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.board h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:800;margin-bottom:20px}
+.board p{color:var(--ink-soft);max-width:44ch;margin-bottom:14px}
+.card{background:var(--sheet);border-radius:var(--r-lg);padding:26px;box-shadow:0 30px 60px -30px rgba(22,30,43,.35)}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.card-head b{font:800 1.15rem "Bricolage Grotesque",sans-serif}
+.card-head small{color:var(--ink-soft)}
+.job{display:grid;grid-template-columns:1fr auto;gap:4px 12px;background:var(--paper);padding:14px 16px;border-radius:var(--r-sm);margin-bottom:10px}
+.job span{font-size:.92rem;color:var(--ink-soft)}
+.pill{font-size:.8rem;font-weight:600;padding:3px 12px;border-radius:999px;align-self:center;grid-row:span 2}
+.p1{background:#D5EBE3;color:var(--pine)}
+.p2{background:var(--pill-bg);color:var(--pill-fg)}
+.p3{background:#E3E6E2;color:var(--ink)}
+.bar{grid-column:1/-1;height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--ink);border-radius:6px}
+.card .job:nth-child(2) .bar i{background:var(--pine)}
+.card .job:nth-child(3) .bar i{background:#E5A823}
+
+
+/* scroll-in: job board fills when it comes into view */
+.job{transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.card .job:nth-child(2){transition-delay:.05s}.card .job:nth-child(3){transition-delay:.2s}.card .job:nth-child(4){transition-delay:.35s}
+.js .card:not(.in) .job{opacity:0;transform:translateY(14px)}
+.js .card.in .bar i{animation:fill 1.2s cubic-bezier(.3,.7,.2,1) .5s both}
+.js .card:not(.in) .bar i{width:0!important}
+@keyframes fill{from{width:0}}
+@media (prefers-reduced-motion:reduce){.job{transition:none}.js .card.in .bar i{animation:none}}
+
+/* process */
+.process{padding:100px 0}
+.process h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:800;margin-bottom:48px;max-width:16ch}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);counter-reset:s}
+.step{padding:0 28px 0 0;position:relative}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font:800 1.1rem "Bricolage Grotesque",sans-serif;margin-bottom:22px;position:relative;z-index:1}
+.step::after{content:"";position:absolute;top:22px;left:44px;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 16px);opacity:.35}
+.step:last-child::after{display:none}
+.step h3{font-size:1.5rem;font-weight:600;margin-bottom:8px}
+.step p{color:var(--ink-soft);max-width:30ch}
+
+/* contact */
+.contact{padding:0 0 90px}
+.contact .box{background:var(--signal);color:var(--on-signal);border-radius:var(--r-lg);padding:64px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.contact h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800}
+.contact p{margin-top:14px;max-width:38ch}
+.contact .btn{background:var(--ink);color:#fff;font-size:1.1rem;padding:18px 34px}
+.contact .btn:hover{background:#000}
+.contact small{display:block;margin-top:14px}
+.contact .phone{display:block;font:800 clamp(1.8rem,3.2vw,2.6rem) "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;text-decoration:none;margin-bottom:18px}
+.contact .phone:hover{text-decoration:underline;text-underline-offset:6px}
+footer{padding:0 0 40px;color:var(--ink-soft);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  nav a:not(.btn){display:none}
+  .hero .wrap,.services .wrap,.board .wrap,.contact .box{grid-template-columns:1fr}
+  .stage{min-height:420px}
+  .services h2{position:static}
+  .svc{grid-template-columns:104px 1fr;gap:18px}
+  .svc .art{width:104px;height:72px}
+  .steps{grid-template-columns:1fr;gap:34px}
+  .step::after{display:none}
+  .contact .box{padding:40px 26px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Liquid Machine home"><span class="mark" aria-hidden="true">LM</span>Liquid Machine</a>
+    <nav aria-label="Main">
+      <a href="#services">What we build</a>
+      <a href="#dashboards">Dashboards</a>
+      <a href="#process">How it works</a>
+      <a class="btn" href="#contact">Talk to us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Turn the scramble into a system.</h1>
+      <p class="lead">Websites, social media, branding, and custom dashboards that keep your small business moving and your customers in the loop.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Start a conversation</a>
+        <a class="btn ghost" href="#services">See what we build</a>
+      </div>
+    </div>
+
+    <div class="stage" role="img" aria-label="A sample website, a social media post and a job dashboard">
+      <div class="win">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="body">
+          <span class="tag">Your business, online</span>
+          <h4>Made right. Shipped on time.</h4>
+          <div class="ln"></div><div class="ln s"></div>
+          <span class="cta">Request a quote</span>
+          <div class="tiles"><b></b><b></b><b></b></div>
+        </div>
+      </div>
+      <div class="post"><div class="img"></div><p>Order 4127 shipped today.</p></div>
+      <div class="board-mini">
+        <small>This week</small>
+        <div class="row"><span><i class="dot d1"></i>Shipped</span><b data-n="3">3</b></div>
+        <div class="row"><span><i class="dot d2"></i>Waiting on materials</span><b data-n="2">2</b></div>
+        <div class="row"><span><i class="dot d3"></i>In production</span><b data-n="5">5</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>Everything a small business needs to look sharp and run clean.<span>One partner, one plain conversation, no jargon.</span></h2>
+    <div>
+      <article class="svc">
+        <div class="art"><svg viewBox="0 0 160 110" aria-hidden="true"><rect x="14" y="12" width="112" height="80" rx="9" fill="#EDEFEC"/><rect x="14" y="12" width="112" height="16" rx="9" fill="#C9D0CC"/><rect x="14" y="22" width="112" height="6" fill="#C9D0CC"/><circle cx="25" cy="20" r="2.5" fill="#8A948F"/><circle cx="34" cy="20" r="2.5" fill="#8A948F"/><rect x="24" y="38" width="56" height="9" rx="4.5" fill="#161E2B"/><rect x="24" y="52" width="42" height="5" rx="2.5" fill="#B4BDB8"/><rect x="24" y="62" width="32" height="13" rx="6.5" fill="#3AA57C"/><rect x="90" y="38" width="28" height="38" rx="6" fill="#8FD6B8"/><path d="M112 70v26l7-7 6 12 6-3-6-12h10z" fill="#fff" stroke="#161E2B" stroke-width="2.500" stroke-linejoin="round"/></svg></div>
+        <div><h3>Websites</h3><p>Fast, clear sites that tell people what you do, show them your work, and make it easy to call or book.</p></div>
+      </article>
+      <article class="svc">
+        <div class="art"><svg viewBox="0 0 160 110" aria-hidden="true"><rect x="48" y="6" width="64" height="98" rx="13" fill="#EDEFEC"/><rect x="54" y="16" width="52" height="78" rx="6" fill="#fff"/><rect x="58" y="20" width="14" height="14" rx="3" fill="#3AA57C"/><rect x="75" y="20" width="14" height="14" rx="3" fill="#161E2B"/><rect x="92" y="20" width="10" height="14" rx="3" fill="#E5A823"/><rect x="58" y="37" width="14" height="14" rx="3" fill="#8FD6B8"/><rect x="75" y="37" width="14" height="14" rx="3" fill="#E5A823"/><rect x="92" y="37" width="10" height="14" rx="3" fill="#161E2B"/><rect x="58" y="54" width="14" height="14" rx="3" fill="#161E2B"/><rect x="75" y="54" width="14" height="14" rx="3" fill="#3AA57C"/><rect x="92" y="54" width="10" height="14" rx="3" fill="#8FD6B8"/><rect x="58" y="74" width="44" height="5" rx="2.500" fill="#C9D0CC"/><rect x="58" y="83" width="28" height="5" rx="2.500" fill="#C9D0CC"/><circle cx="128" cy="30" r="14" fill="#3AA57C"/><path d="M128 37l-7-7a4 4 0 0 1 7-5 4 4 0 0 1 7 5z" fill="#fff"/><rect x="12" y="40" width="40" height="24" rx="9" fill="#EDEFEC"/><path d="M40 64l8 8v-8z" fill="#EDEFEC"/><rect x="19" y="49" width="26" height="4" rx="2" fill="#8A948F"/><rect x="19" y="56" width="16" height="4" rx="2" fill="#8A948F"/></svg></div>
+        <div><h3>Social media setup</h3><p>Profiles built, branded, and ready to post, with a simple routine you can keep up with between jobs.</p></div>
+      </article>
+      <article class="svc">
+        <div class="art"><svg viewBox="0 0 160 110" aria-hidden="true"><g transform="rotate(-6 60 55)"><rect x="12" y="24" width="96" height="60" rx="7" fill="#EDEFEC"/><rect x="22" y="34" width="16" height="16" rx="4.500" fill="#161E2B"/><circle cx="34" cy="38" r="2" fill="#3AA57C"/><rect x="22" y="60" width="44" height="6" rx="3" fill="#161E2B"/><rect x="22" y="71" width="62" height="4" rx="2" fill="#B4BDB8"/></g><circle cx="122" cy="26" r="11" fill="#3AA57C"/><circle cx="142" cy="40" r="11" fill="#E5A823"/><circle cx="122" cy="54" r="11" fill="#8FD6B8"/><text x="104" y="98" font-size="30" font-weight="800" fill="#fff">Aa</text></svg></div>
+        <div><h3>Branding</h3><p>A name treatment, colors, and type that look the same on your truck, your invoice, and your homepage.</p></div>
+      </article>
+      <article class="svc">
+        <div class="art"><svg viewBox="0 0 160 110" aria-hidden="true"><rect x="10" y="10" width="42" height="90" rx="7" fill="rgba(255,255,255,.1)"/><rect x="59" y="10" width="42" height="90" rx="7" fill="rgba(255,255,255,.1)"/><rect x="108" y="10" width="42" height="90" rx="7" fill="rgba(255,255,255,.1)"/><rect x="15" y="18" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="15" y="18" width="4" height="18" rx="2" fill="#E5A823"/><rect x="15" y="41" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="15" y="41" width="4" height="18" rx="2" fill="#E5A823"/><rect x="64" y="18" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="64" y="18" width="4" height="18" rx="2" fill="#8EA4BF"/><rect x="64" y="41" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="64" y="41" width="4" height="18" rx="2" fill="#8EA4BF"/><rect x="64" y="64" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="64" y="64" width="4" height="18" rx="2" fill="#8EA4BF"/><rect x="113" y="18" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="113" y="18" width="4" height="18" rx="2" fill="#3AA57C"/><path d="M121 27l3 3 6-6" stroke="#3AA57C" stroke-width="2.500" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 50h12" stroke="#8FD6B8" stroke-width="2.500" stroke-dasharray="3 3" stroke-linecap="round"/></svg></div>
+        <div><h3>Custom productivity dashboards</h3><p>Boards that track the work and keep customers informed, so nobody has to ask where things stand.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="board" id="dashboards">
+  <div class="wrap">
+    <div>
+      <h2>A board your whole team, and your customers, can read.</h2>
+      <p>We set up dashboards around how your shop floor or warehouse already works. Orders, owners, deadlines and status in one place, updated as the work moves.</p>
+      <p>Customers get a straight answer without a phone call. You get your afternoon back.</p>
+    </div>
+    <div class="card" aria-label="Example job board">
+      <div class="card-head"><b>Open orders</b><small>Example board</small></div>
+      <div class="job"><div><b>Order 4127, steel brackets</b></div><span class="pill p1">Shipped</span><span>Customer notified 10:40 am</span><div class="bar"><i style="width:100%"></i></div></div>
+      <div class="job"><div><b>Order 4132, custom enclosures</b></div><span class="pill p2">Waiting on materials</span><span>Steel arrives Thursday</span><div class="bar"><i style="width:55%"></i></div></div>
+      <div class="job"><div><b>Order 4138, pallet racking</b></div><span class="pill p3">In production</span><span>Assigned to Line 2</span><div class="bar"><i style="width:25%"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <h2>Simple from first call to finished work.</h2>
+    <div class="steps">
+      <div class="step"><h3>We talk</h3><p>You tell us how the business runs and where things get messy. We listen first.</p></div>
+      <div class="step"><h3>We build</h3><p>You see real progress early, and we adjust until it fits the way you work.</p></div>
+      <div class="step"><h3>We hand it over</h3><p>You get a walkthrough, plain-language notes, and a partner who picks up when you call.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <h2>Tell us what's slowing you down.</h2>
+        <p>We'll tell you honestly whether and how we can help.</p>
+      </div>
+      <div>
+        <!-- TODO: replace with the real business email or a contact form -->
+        <a class="phone" href="tel:+18595881837">859-588-1837</a>
+        <a class="btn" href="mailto:hello@liquidmachine.com?subject=Project%20inquiry">Email Liquid Machine</a>
+        <small>hello@liquidmachine.com</small>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>&copy; 2026 Liquid Machine &nbsp;|&nbsp; <a href="tel:+18595881837">859-588-1837</a></span><span>Websites, social media and dashboards for small business.</span></div>
+</footer>
+<script>
+(function(){
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce)return;
+  document.documentElement.classList.add("js");
+  // hero counts tick up once the collage has landed
+  document.querySelectorAll(".board-mini b[data-n]").forEach(function(el,i){
+    var n=+el.dataset.n,t0=null;el.textContent="0";
+    function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/900,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)}
+    setTimeout(function(){requestAnimationFrame(step)},900+i*180);
+  });
+  // job board fills when scrolled into view
+  var card=document.querySelector(".card");
+  if(card&&"IntersectionObserver" in window){
+    new IntersectionObserver(function(e,o){if(e[0].isIntersecting){card.classList.add("in");o.disconnect()}},{threshold:.35}).observe(card);
+  }else if(card){card.classList.add("in")}
+})();
+</script>
+</body>
+</html>
