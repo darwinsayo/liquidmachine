@@ -10,6 +10,8 @@
 <meta property="og:description" content="Websites, social media, branding and custom dashboards for small business.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#161E2B">
+<link rel="preload" as="image" href="/hero.jpg">
+<meta property="og:image" content="https://liquidmachine.com/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -41,14 +43,15 @@ a{color:inherit}
 .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
 
 /* header */
-header{padding:22px 0}
+header{position:absolute;inset:0 0 auto 0;z-index:5;padding:22px 0;color:#fff}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
-.mark{width:36px;height:36px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font:800 .95rem "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;position:relative}
+.mark{width:36px;height:36px;border-radius:10px;background:#fff;color:var(--ink);display:grid;place-items:center;font:800 .95rem "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;position:relative}
 .mark::after{content:"";position:absolute;right:5px;top:5px;width:6px;height:6px;border-radius:2px;background:var(--signal)}
 nav{display:flex;gap:26px;align-items:center;font-weight:500}
-nav a{text-decoration:none;color:var(--ink-soft)}
-nav a:hover{color:var(--ink)}
+nav a{text-decoration:none;color:rgba(255,255,255,.88)}
+nav a:hover{color:#fff}
+nav a.btn{color:var(--on-signal)}
 .btn{display:inline-block;background:var(--signal);color:var(--on-signal);font-weight:600;text-decoration:none;padding:14px 26px;border-radius:999px;transition:transform .15s,background .15s;border:0;cursor:pointer;font-size:1rem;font-family:inherit}
 .btn:hover{background:var(--signal-hover);transform:translateY(-2px)}
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
@@ -56,44 +59,22 @@ nav a:hover{color:var(--ink)}
 nav .btn{padding:10px 20px}
 
 /* hero */
-.hero{padding:40px 0 90px}
-.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(2.7rem,5.4vw,4.9rem);font-weight:800;margin-bottom:22px}
-.hero p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:34ch;margin-bottom:32px}
+.hero{position:relative;min-height:660px;display:flex;align-items:center;padding:130px 0 138px;color:#fff;
+  background:
+    linear-gradient(90deg,rgba(22,30,43,.93) 0%,rgba(22,30,43,.84) 30%,rgba(22,30,43,.4) 56%,rgba(22,30,43,.05) 80%),
+    linear-gradient(0deg,rgba(22,30,43,.45) 0%,rgba(22,30,43,0) 30%),
+    linear-gradient(180deg,rgba(22,30,43,.6) 0%,rgba(22,30,43,0) 170px),
+    url("/hero.jpg") 72% center/cover no-repeat,#2A3646}
+.hero .wrap{width:min(1120px,100% - 40px)}
+.hero .copy{max-width:540px}
+.hero h1{font-size:clamp(2.7rem,5.4vw,4.9rem);font-weight:800;margin-bottom:22px;text-shadow:0 2px 24px rgba(22,30,43,.35)}
+.hero p.lead{font-size:1.2rem;color:rgba(255,255,255,.88);max-width:34ch;margin-bottom:32px}
 .hero .actions{display:flex;gap:14px;flex-wrap:wrap}
-
-/* hero composition: three overlapping pieces of work */
-.stage{position:relative;min-height:470px}
-.win{position:absolute;left:0;top:36px;width:66%;background:var(--paper);border-radius:18px;box-shadow:0 30px 60px -28px rgba(22,30,43,.4);overflow:hidden}
-.win .bar{display:flex;gap:6px;padding:12px 14px;background:#E3E6E2}
-.win .bar i{width:10px;height:10px;border-radius:50%;background:#B9C0BB}
-.win .body{padding:26px 24px 28px}
-.win .tag{font:600 .8rem "Instrument Sans",sans-serif;color:var(--pine)}
-.win h4{font:800 1.7rem/1.05 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:8px 0 14px}
-.win .ln{height:9px;border-radius:5px;background:#E3E6E2;margin-bottom:8px}
-.win .ln.s{width:62%}
-.win .cta{display:inline-block;margin-top:14px;background:var(--signal);border-radius:999px;padding:9px 20px;font:600 .9rem "Instrument Sans",sans-serif}
-.win .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
-.win .tiles b{height:44px;border-radius:10px;background:#E3E6E2}
-.win .tiles b:nth-child(2){background:var(--ink)}
-.win .tiles b:nth-child(3){background:var(--signal-pale)}
-.board-mini{position:absolute;right:0;bottom:0;width:62%;background:var(--ink);color:#fff;border-radius:18px;padding:18px;box-shadow:0 30px 60px -28px rgba(22,30,43,.6)}
-.board-mini small{color:#A9B2BF;font-size:.8rem}
-.board-mini .row{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(255,255,255,.08);border-radius:10px;padding:10px 12px;margin-top:9px;font-size:.9rem}
-.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:8px}
-.d1{background:#58C7A6}.d2{background:#E5A823}.d3{background:#8EA4BF}
-.post{position:absolute;right:2%;top:0;width:30%;background:var(--paper);border-radius:16px;padding:12px;transform:rotate(3deg);box-shadow:0 24px 50px -24px rgba(22,30,43,.45)}
-.post .img{aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,var(--signal) 0 55%,var(--ink) 55%)}
-.post p{font-size:.78rem;color:var(--ink-soft);margin-top:8px;line-height:1.35}
-.win,.board-mini,.post{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
-.board-mini{animation-delay:.15s}.post{animation-delay:.3s}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}}
-.post{animation-name:rise-post}
-@keyframes rise-post{from{opacity:0;transform:translateY(18px) rotate(3deg)}}
-@media (prefers-reduced-motion:reduce){.win,.board-mini,.post{animation:none}}
+.hero .btn.ghost{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.85)}
+.hero .btn.ghost:hover{background:#fff;color:var(--ink)}
 
 /* services */
-.services{background:var(--ink);color:#fff;padding:96px 0;border-radius:var(--r-lg) var(--r-lg) 0 0}
+.services{position:relative;margin-top:-28px;background:var(--ink);color:#fff;padding:96px 0;border-radius:var(--r-lg) var(--r-lg) 0 0}
 .services .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
 .services h2{font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:800;position:sticky;top:32px;align-self:start}
 .services h2 span{display:block;color:var(--signal-soft);font-weight:400;font-size:.45em;letter-spacing:0;margin-top:18px;line-height:1.5;max-width:30ch;font-family:"Instrument Sans",sans-serif}
@@ -161,8 +142,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media (max-width:860px){
   nav a:not(.btn){display:none}
-  .hero .wrap,.services .wrap,.board .wrap,.contact .box{grid-template-columns:1fr}
-  .stage{min-height:420px}
+  .services .wrap,.board .wrap,.contact .box{grid-template-columns:1fr}
+  .hero{min-height:880px;align-items:flex-start;padding:112px 0 98px;background:
+    linear-gradient(180deg,#161E2B 0,#161E2B 470px,rgba(22,30,43,.82) 540px,rgba(22,30,43,.4) 620px,rgba(22,30,43,0) 720px),
+    url("/hero.jpg") 80% 100%/auto 420px no-repeat,#161E2B}
   .services h2{position:static}
   .svc{grid-template-columns:104px 1fr;gap:18px}
   .svc .art{width:104px;height:72px}
@@ -189,7 +172,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <main id="top">
 <section class="hero">
   <div class="wrap">
-    <div>
+    <div class="copy">
       <h1>Turn the scramble into a system.</h1>
       <p class="lead">Websites, social media, branding, and custom dashboards that keep your small business moving and your customers in the loop.</p>
       <div class="actions">
@@ -198,25 +181,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </div>
     </div>
 
-    <div class="stage" role="img" aria-label="A sample website, a social media post and a job dashboard">
-      <div class="win">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <div class="body">
-          <span class="tag">Your business, online</span>
-          <h4>Made right. Shipped on time.</h4>
-          <div class="ln"></div><div class="ln s"></div>
-          <span class="cta">Request a quote</span>
-          <div class="tiles"><b></b><b></b><b></b></div>
-        </div>
-      </div>
-      <div class="post"><div class="img"></div><p>Order 4127 shipped today.</p></div>
-      <div class="board-mini">
-        <small>This week</small>
-        <div class="row"><span><i class="dot d1"></i>Shipped</span><b data-n="3">3</b></div>
-        <div class="row"><span><i class="dot d2"></i>Waiting on materials</span><b data-n="2">2</b></div>
-        <div class="row"><span><i class="dot d3"></i>In production</span><b data-n="5">5</b></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -311,4 +275,4 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 })();
 </script>
 </body>
-</html> 
+</html>
