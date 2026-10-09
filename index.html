@@ -86,6 +86,24 @@ nav .btn{padding:10px 20px}
 .svc h3{font-size:1.7rem;font-weight:600;margin-bottom:8px}
 .svc p{color:#C4CAD3;max-width:46ch}
 
+/* recent work */
+.work{padding:100px 0 96px}
+.work h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:800;max-width:18ch}
+.work .sub{color:var(--ink-soft);max-width:44ch;margin:16px 0 44px}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.proj{display:block;text-decoration:none;background:var(--paper);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 30px 60px -36px rgba(22,30,43,.45);transition:transform .25s ease,box-shadow .25s ease}
+.proj:hover{transform:translateY(-5px);box-shadow:0 36px 64px -34px rgba(22,30,43,.55)}
+.proj .frame{background:#E3E6E2;padding:12px 14px 0;display:flex;gap:6px;align-items:center}
+.proj .frame i{width:10px;height:10px;border-radius:50%;background:#B9C0BB}
+.proj .frame span{margin-left:10px;flex:1;max-width:260px;background:#F6F7F5;border-radius:999px;padding:3px 14px;font-size:.78rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.proj .frame{padding-bottom:12px}
+.proj img{display:block;width:100%;height:auto;aspect-ratio:10/7;object-fit:cover;object-position:top center}
+.proj .cap{padding:24px 26px 28px}
+.proj .tag{font:600 .85rem "Instrument Sans",sans-serif;color:var(--pine)}
+.proj h3{font-size:1.6rem;font-weight:800;margin:6px 0 10px}
+.proj p{color:var(--ink-soft);max-width:44ch}
+.proj .visit{display:inline-block;margin-top:16px;font-weight:600;color:var(--ink);border-bottom:2px solid var(--signal)}
+
 /* dashboard showcase */
 .board{padding:100px 0;background:var(--paper)}
 .board .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
@@ -149,6 +167,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .services h2{position:static}
   .svc{grid-template-columns:104px 1fr;gap:18px}
   .svc .art{width:104px;height:72px}
+  .work-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr;gap:34px}
   .step::after{display:none}
   .contact .box{padding:40px 26px}
@@ -162,6 +181,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <a class="brand" href="#top" aria-label="Liquid Machine home"><span class="mark" aria-hidden="true">LM</span>Liquid Machine</a>
     <nav aria-label="Main">
       <a href="#services">What we build</a>
+      <a href="#work">Our work</a>
       <a href="#dashboards">Dashboards</a>
       <a href="#process">How it works</a>
       <a class="btn" href="#contact">Talk to us</a>
@@ -204,6 +224,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="art"><svg viewBox="0 0 160 110" aria-hidden="true"><rect x="10" y="10" width="42" height="90" rx="7" fill="rgba(255,255,255,.1)"/><rect x="59" y="10" width="42" height="90" rx="7" fill="rgba(255,255,255,.1)"/><rect x="108" y="10" width="42" height="90" rx="7" fill="rgba(255,255,255,.1)"/><rect x="15" y="18" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="15" y="18" width="4" height="18" rx="2" fill="#E5A823"/><rect x="15" y="41" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="15" y="41" width="4" height="18" rx="2" fill="#E5A823"/><rect x="64" y="18" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="64" y="18" width="4" height="18" rx="2" fill="#8EA4BF"/><rect x="64" y="41" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="64" y="41" width="4" height="18" rx="2" fill="#8EA4BF"/><rect x="64" y="64" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="64" y="64" width="4" height="18" rx="2" fill="#8EA4BF"/><rect x="113" y="18" width="32" height="18" rx="4" fill="#EDEFEC"/><rect x="113" y="18" width="4" height="18" rx="2" fill="#3AA57C"/><path d="M121 27l3 3 6-6" stroke="#3AA57C" stroke-width="2.500" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 50h12" stroke="#8FD6B8" stroke-width="2.500" stroke-dasharray="3 3" stroke-linecap="round"/></svg></div>
         <div><h3>Custom productivity dashboards</h3><p>Boards that track the work and keep customers informed, so nobody has to ask where things stand.</p></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <h2>Recent work</h2>
+    <p class="sub">Real websites for local organizations, built to be clear, easy to use and easy to keep up to date.</p>
+    <div class="work-grid">
+      <a class="proj" href="https://urlagehall.com" target="_blank" rel="noopener">
+        <div class="frame"><i></i><i></i><i></i><span>urlagehall.com</span></div>
+        <img src="/work-urlage.jpg" alt="Urlage Hall homepage: a black-and-white photo of a wedding toast with the headline Elegant and Timeless Events" width="1400" height="991" loading="lazy">
+        <div class="cap">
+          <span class="tag">Website and branding</span>
+          <h3>Urlage Hall</h3>
+          <p>A wedding and event venue in Independence, Kentucky. Pages for weddings, private parties and corporate events, a gallery, and a booking flow that starts with an introduction call.</p>
+          <span class="visit">Visit urlagehall.com</span>
+        </div>
+      </a>
+      <a class="proj" href="https://www.stmargaretmaryoak.org/" target="_blank" rel="noopener">
+        <div class="frame"><i></i><i></i><i></i><span>stmargaretmaryoak.org</span></div>
+        <img src="/work-smm.jpg" alt="St. Margaret Mary Catholic Church homepage: parish name over a photo of a statue in a Gothic niche" width="1400" height="970" loading="lazy">
+        <div class="cap">
+          <span class="tag">Website</span>
+          <h3>St. Margaret Mary Catholic Church</h3>
+          <p>A parish website in Oakland. Mass and confession times, bulletins, ministries, online giving, registration forms and email sign-up, all easy to find.</p>
+          <span class="visit">Visit stmargaretmaryoak.org</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
