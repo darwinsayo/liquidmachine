@@ -191,3 +191,11 @@ textarea{min-height:120px;resize:vertical}
 .rq blockquote{margin:0;font-family:'Marcellus',serif;font-size:clamp(22px,2.4vw,28px);line-height:1.3;color:var(--navy);text-wrap:balance}
 .review .who{display:flex;flex-direction:column;gap:2px;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--brick)}
 .review .who small{font-size:14px;letter-spacing:.14em;font-weight:500;color:#5A5E66}
+
+/* hero video (desktop only, loaded by script) */
+.hero .media .herovid{position:absolute;top:0;left:0;width:100%;height:600px;object-fit:cover;opacity:0;transition:opacity .6s;border:1px solid #3B4A6B;background:#14213A}
+body.vid-on .hero .media .herovid{opacity:1}
+.vidtag,.vidpause{display:none;position:absolute;top:14px;font-family:'Barlow Semi Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:rgba(20,33,58,.82);color:#E9D9AE;padding:7px 12px;border:0}
+.vidtag{left:14px}
+.vidpause{right:14px;cursor:pointer}
+body.vid-on .vidtag,body.vid-on .vidpause{display:block}
