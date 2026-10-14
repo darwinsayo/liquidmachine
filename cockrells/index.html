@@ -38,9 +38,6 @@
   </div>
   <div class="media">
     <img src="/cockrells/img/painter.jpg" alt="A Cockrell's painter in a respirator hood spraying a vehicle in the paint booth">
-    <video class="herovid" id="herovid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/cockrells/video/hero-sample.mp4" data-src-webm="/cockrells/video/hero-sample.webm"></video>
-    <span class="vidtag" id="vidtag">Sample footage</span>
-    <button class="vidpause" id="vidpause" type="button" aria-label="Pause background video">Pause</button>
     <div class="floatcard"><span class="lab">Free estimates</span><span class="disp">Monday to Thursday<br>7:30 to 5:00</span><small>Friday by appointment</small></div>
   </div>
 </div></div>
@@ -96,23 +93,5 @@
   <div class="links"><a href="/cockrells/services/">Services</a><a href="/cockrells/process/">Repair Process</a><a href="/cockrells/about/">About Us</a><a href="/cockrells/contact/">Contact</a></div>
   <small>Cockrell's Auto Center, Inc. &nbsp;/&nbsp; Cynthiana, Kentucky</small>
 </div></div>
-<script>
-(function(){
-  var v=document.getElementById('herovid');
-  if(!v)return;
-  var wide=window.matchMedia('(min-width:701px)').matches;
-  var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!wide||calm)return;
-  var mp4=v.canPlayType('video/mp4; codecs="avc1.42E01E"');
-  v.src=mp4?v.getAttribute('data-src'):v.getAttribute('data-src-webm');
-  v.addEventListener('playing',function(){document.body.classList.add('vid-on');});
-  var p=v.play();if(p&&p.catch)p.catch(function(){});
-  var b=document.getElementById('vidpause');
-  b.addEventListener('click',function(){
-    if(v.paused){v.play();b.textContent='Pause';b.setAttribute('aria-label','Pause background video');}
-    else{v.pause();b.textContent='Play';b.setAttribute('aria-label','Play background video');}
-  });
-})();
-</script>
 </body>
 </html>
