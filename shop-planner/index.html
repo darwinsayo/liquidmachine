@@ -237,7 +237,9 @@ body{margin:0}
   var ZONES = [
     { id: 'path', name: 'the 36 in walkway', x: 157, y: 0, w: 36, h: 275 },
     { id: 'panel', name: 'the electrical panel', x: 200, y: 0, w: 19, h: 36 },
-    { id: 'ladder', name: 'the attic ladder area', x: 45, y: 66, w: 62, h: 30 }
+    { id: 'ladder', name: 'the attic ladder area', x: 45, y: 66, w: 62, h: 30 },
+    // Side door swings into the room, hinged on the right-hand (garage-side) end; quarter circle of 40 in.
+    { id: 'sidedoor', name: 'the side door swing', x: 191, y: 204, w: 40, h: 40, sector: true, hx: 231, hy: 244, r: 40 }
   ];
 
   var pieces = DEFAULTS.map(function (d) {
@@ -277,7 +279,11 @@ body{margin:0}
     var i;
     // zones first (under everything)
     ZONES.forEach(function (z) {
-      el('rect', { x: z.x, y: z.y, width: z.w, height: z.h, fill: 'var(--zone)', stroke: 'var(--accent)', 'stroke-width': 0.5, 'stroke-dasharray': '3 2' }, gStatic);
+      if (z.sector) {
+        el('path', { d: 'M' + z.hx + ' ' + z.hy + ' L' + z.hx + ' ' + (z.hy - z.r) + ' A' + z.r + ' ' + z.r + ' 0 0 0 ' + (z.hx - z.r) + ' ' + z.hy + ' Z', fill: 'var(--zone)', stroke: 'var(--accent)', 'stroke-width': 0.5, 'stroke-dasharray': '3 2' }, gStatic);
+      } else {
+        el('rect', { x: z.x, y: z.y, width: z.w, height: z.h, fill: 'var(--zone)', stroke: 'var(--accent)', 'stroke-width': 0.5, 'stroke-dasharray': '3 2' }, gStatic);
+      }
     });
     // room fill
     var room = el('rect', { x: 0, y: 0, width: ROOM.w, height: ROOM.h, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 2 });
@@ -303,6 +309,7 @@ body{margin:0}
     txt(gStatic, { x: ROOM.w + 5, y: 224, 'font-size': 4.2, class: 't-note', 'text-anchor': 'middle', transform: 'rotate(90 ' + (ROOM.w + 5) + ' 224)' }, 'Side door');
     txt(gStatic, { x: 175, y: 150, 'text-anchor': 'middle', 'font-size': 5, class: 't-zone', transform: 'rotate(-90 175 150)' }, 'Keep 36 in open');
     txt(gStatic, { x: 76, y: 81, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': 4.6, class: 't-zone' }, 'Attic ladder');
+    txt(gStatic, { x: 216, y: 228, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': 3.8, class: 't-zone' }, 'Door swing');
 
     // overall dimensions
     el('line', { x1: 0, y1: -12, x2: ROOM.w, y2: -12, stroke: 'var(--muted)', 'stroke-width': 0.4 }, gStatic);
@@ -414,6 +421,14 @@ body{margin:0}
   function hit(a, b) {
     return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
   }
+  // A piece blocks a rectangular zone if it overlaps it, or a door-swing zone if it reaches into the quarter circle.
+  function hitZone(p, z) {
+    if (!hit(p, z)) return false;
+    if (!z.sector) return true;
+    var nx = Math.max(p.x, Math.min(z.hx, p.x + p.w)), ny = Math.max(p.y, Math.min(z.hy, p.y + p.h));
+    var dx = nx - z.hx, dy = ny - z.hy;
+    return dx * dx + dy * dy < z.r * z.r;
+  }
   function analyze() {
     var bad = 0;
     pieces.forEach(function (p) { p.flags = []; });
@@ -426,7 +441,7 @@ body{margin:0}
         }
       }
       for (var k = 0; k < ZONES.length; k++) {
-        if (hit(act[i], ZONES[k])) act[i].flags.push('blocks ' + ZONES[k].name);
+        if (hitZone(act[i], ZONES[k])) act[i].flags.push('blocks ' + ZONES[k].name);
       }
     }
     pieces.forEach(function (f) {
