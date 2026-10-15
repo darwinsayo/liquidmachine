@@ -186,6 +186,7 @@ body{margin:0}
       </div>
       <svg id="svg" viewBox="-18 -22 267 334" role="img" aria-label="Top-down plan of the shop with movable furniture and equipment">
         <g id="static"></g>
+        <g id="openings" pointer-events="none"></g>
         <g id="pieces"></g>
         <g id="over" pointer-events="none"></g>
       </svg>
@@ -212,7 +213,7 @@ body{margin:0}
   // Real sizes in inches, in plan orientation (w across, h down). Positions are a starting arrangement.
   var DEFAULTS = [
     { id: 'lbl', name: 'L bench, left wall', label: 'L bench', w: 24, h: 72, x: 0, y: 0, cat: 'bench' },
-    { id: 'lbf', name: 'L bench, far wall', label: 'L bench', w: 49, h: 24, x: 24, y: 0, cat: 'bench' },
+    { id: 'lbf', name: 'L bench, far wall', label: 'L bench', w: 53, h: 24, x: 24, y: 0, cat: 'bench' },
     { id: 'bn1', name: 'Long bench 1', label: 'Bench 1', w: 24, h: 72, x: 0, y: 76, cat: 'bench' },
     { id: 'bn2', name: 'Long bench 2', label: 'Bench 2', w: 24, h: 72, x: 0, y: 152, cat: 'bench' },
     { id: 'cnc', name: 'CNC table', label: 'CNC table', w: 48, h: 70, x: 66, y: 129, cat: 'machine' },
@@ -224,7 +225,7 @@ body{margin:0}
     { id: 'sh3', name: 'Shelf 3', label: 'Shelf', w: 48, h: 24, x: 66, y: 203, cat: 'shelf' },
     { id: 'sh4', name: 'Shelf 4', label: 'Shelf', w: 48, h: 24, x: 66, y: 231, cat: 'shelf' },
     { id: 'sh5', name: 'Shelf 5', label: 'Shelf', w: 48, h: 24, x: 66, y: 101, cat: 'shelf' },
-    { id: 'frg', name: 'Fridge', label: 'Fridge', w: 27, h: 24, x: 125, y: 0, cat: 'small' },
+    { id: 'frg', name: 'Fridge', label: 'Fridge', w: 27, h: 24, x: 125, y: 0, cat: 'small', door: { side: 'b', depth: 27 } },
     { id: 'bks', name: 'Bookshelf', label: 'Bookshelf', w: 12, h: 32, x: 219, y: 10, cat: 'small' },
     { id: 'cbf', name: 'Cubby by fridge', label: 'Cubby', w: 12, h: 17, x: 100, y: 0, cat: 'small' },
     { id: 'cb1', name: 'Cubby 1', label: 'Cubby', w: 11, h: 16, x: 77, y: 0, cat: 'small' },
@@ -239,7 +240,8 @@ body{margin:0}
   ];
 
   var pieces = DEFAULTS.map(function (d) {
-    return { id: d.id, name: d.name, label: d.label, cat: d.cat, w: d.w, h: d.h, x: d.x, y: d.y, removed: false, flags: [] };
+    return { id: d.id, name: d.name, label: d.label, cat: d.cat, w: d.w, h: d.h, x: d.x, y: d.y, removed: false, flags: [],
+      door: d.door ? { side: d.door.side, depth: d.door.depth } : null };
   });
   var byId = {};
   pieces.forEach(function (p) { byId[p.id] = p; });
@@ -371,6 +373,41 @@ body{margin:0}
     });
   }
 
+  /* ---------- door-swing areas (fridge) ---------- */
+  var gOpen = document.getElementById('openings');
+  var openNodes = {};
+  var SIDE_NEXT = { b: 'l', l: 't', t: 'r', r: 'b' }; // Rotate turns the piece clockwise
+  function openingRect(p) {
+    var d = p.door.depth;
+    if (p.door.side === 'b') return { x: p.x, y: p.y + p.h, w: p.w, h: d };
+    if (p.door.side === 't') return { x: p.x, y: p.y - d, w: p.w, h: d };
+    if (p.door.side === 'l') return { x: p.x - d, y: p.y, w: d, h: p.h };
+    return { x: p.x + p.w, y: p.y, w: d, h: p.h };
+  }
+  function updateOpenings() {
+    pieces.forEach(function (p) {
+      if (!p.door) return;
+      var n = openNodes[p.id];
+      if (!n) {
+        n = openNodes[p.id] = { g: el('g', {}, gOpen) };
+        n.rect = el('rect', { 'stroke-width': 0.5, 'stroke-dasharray': '3 2' }, n.g);
+        n.text = txt(n.g, { 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': 3.8, class: 't-zone' }, p.label + ' door');
+      }
+      n.g.style.display = p.removed ? 'none' : '';
+      var r = openingRect(p);
+      var blocked = p.flags.some(function (f) { return f.indexOf('door blocked') === 0; });
+      n.rect.setAttribute('x', r.x); n.rect.setAttribute('y', r.y);
+      n.rect.setAttribute('width', r.w); n.rect.setAttribute('height', r.h);
+      n.rect.setAttribute('fill', blocked ? 'var(--warn)' : 'var(--zone)');
+      n.rect.setAttribute('fill-opacity', blocked ? 0.18 : 1);
+      n.rect.setAttribute('stroke', blocked ? 'var(--warn)' : 'var(--accent)');
+      var cx = r.x + r.w / 2, cy = r.y + r.h / 2;
+      n.text.setAttribute('x', cx); n.text.setAttribute('y', cy);
+      if (r.w < r.h * 0.8) n.text.setAttribute('transform', 'rotate(-90 ' + cx + ' ' + cy + ')');
+      else n.text.removeAttribute('transform');
+    });
+  }
+
   /* ---------- overlap / clear-zone checks ---------- */
   function hit(a, b) {
     return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
@@ -390,7 +427,18 @@ body{margin:0}
         if (hit(act[i], ZONES[k])) act[i].flags.push('blocks ' + ZONES[k].name);
       }
     }
+    pieces.forEach(function (f) {
+      if (!f.door || f.removed) return;
+      var r = openingRect(f);
+      act.forEach(function (q) {
+        if (q !== f && hit(q, r)) {
+          q.flags.push('blocks the ' + f.label.toLowerCase() + ' door');
+          f.flags.push('door blocked by ' + q.name);
+        }
+      });
+    });
     pieces.forEach(function (p) { if (p.flags.length) bad++; updateClasses(p); });
+    updateOpenings();
     var st = document.getElementById('status');
     if (bad) {
       st.textContent = bad + (bad === 1 ? ' piece needs' : ' pieces need') + ' attention';
@@ -492,6 +540,7 @@ body{margin:0}
   function rotate(p) {
     var cx = p.x + p.w / 2, cy = p.y + p.h / 2;
     var t = p.w; p.w = p.h; p.h = t;
+    if (p.door) p.door.side = SIDE_NEXT[p.door.side];
     p.x = Math.round(cx - p.w / 2);
     p.y = Math.round(cy - p.h / 2);
     clamp(p);
@@ -507,6 +556,7 @@ body{margin:0}
   function restore(p) {
     var d = defById[p.id];
     p.w = d.w; p.h = d.h; p.x = d.x; p.y = d.y; p.removed = false;
+    if (d.door) p.door.side = d.door.side;
     drawPiece(p);
     select(p.id);
     refresh(); save();
@@ -583,7 +633,7 @@ body{margin:0}
   function save() {
     try {
       var out = {};
-      pieces.forEach(function (p) { out[p.id] = { x: p.x, y: p.y, w: p.w, h: p.h, r: p.removed ? 1 : 0 }; });
+      pieces.forEach(function (p) { out[p.id] = { x: p.x, y: p.y, w: p.w, h: p.h, r: p.removed ? 1 : 0, s: p.door ? p.door.side : 0 }; });
       localStorage.setItem(STORE, JSON.stringify(out));
     } catch (err) {}
   }
@@ -602,6 +652,7 @@ body{margin:0}
           if (sameShape) { p.w = s.w; p.h = s.h; p.x = s.x; p.y = s.y; clamp(p); }
         }
         p.removed = s.r === 1;
+        if (p.door && /^[btlr]$/.test(s.s)) p.door.side = s.s;
       });
     } catch (err) {}
   }
@@ -620,6 +671,7 @@ body{margin:0}
     pieces.forEach(function (p) {
       var d = defById[p.id];
       p.w = d.w; p.h = d.h; p.x = d.x; p.y = d.y; p.removed = false;
+      if (d.door) p.door.side = d.door.side;
       drawPiece(p);
     });
     selected = null;
