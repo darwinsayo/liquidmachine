@@ -237,7 +237,7 @@ body{margin:0}
   var ZONES = [
     { id: 'path', name: 'the 36 in walkway', x: 157, y: 0, w: 36, h: 275 },
     { id: 'panel', name: 'the electrical panel', x: 200, y: 0, w: 19, h: 36 },
-    { id: 'ladder', name: 'the attic ladder area', x: 45, y: 66, w: 50, h: 30 }
+    { id: 'ladder', name: 'the attic ladder area', x: 45, y: 66, w: 62, h: 30 }
   ];
 
   var pieces = DEFAULTS.map(function (d) {
@@ -302,7 +302,7 @@ body{margin:0}
     txt(gStatic, { x: 115, y: 288, 'text-anchor': 'middle', 'font-size': 5, class: 't-note' }, 'Garage door');
     txt(gStatic, { x: ROOM.w + 5, y: 224, 'font-size': 4.2, class: 't-note', 'text-anchor': 'middle', transform: 'rotate(90 ' + (ROOM.w + 5) + ' 224)' }, 'Side door');
     txt(gStatic, { x: 175, y: 150, 'text-anchor': 'middle', 'font-size': 5, class: 't-zone', transform: 'rotate(-90 175 150)' }, 'Keep 36 in open');
-    txt(gStatic, { x: 70, y: 81, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': 4.6, class: 't-zone' }, 'Attic ladder');
+    txt(gStatic, { x: 76, y: 81, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': 4.6, class: 't-zone' }, 'Attic ladder');
 
     // overall dimensions
     el('line', { x1: 0, y1: -12, x2: ROOM.w, y2: -12, stroke: 'var(--muted)', 'stroke-width': 0.4 }, gStatic);
