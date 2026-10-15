@@ -100,7 +100,7 @@ h1 { margin: 0; font-size: 26px; font-weight: 600; letter-spacing: 0.01em; text-
 
 .stage { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; align-items: start; }
 .plan { background: var(--surface); border: 1px solid var(--line); padding: 8px; min-width: 0; }
-.plan svg { display: block; width: 100%; height: auto; max-height: calc(100vh - 130px); user-select: none; -webkit-user-select: none; }
+.plan svg { display: block; width: 100%; height: calc(100vh - 150px); min-height: 520px; user-select: none; -webkit-user-select: none; }
 .zoombar { display: flex; align-items: center; gap: 8px; margin: 0 4px 8px; }
 .zoombar button { min-width: 42px; padding: 5px 12px; font-size: 16px; }
 .zoombar .zl { font-family: var(--font-mono); font-size: 13px; color: var(--muted); min-width: 48px; }
@@ -154,7 +154,7 @@ ul.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction
 
 @media (max-width: 860px) {
   .stage { grid-template-columns: minmax(0, 1fr); }
-  .plan svg { max-height: none; }
+  .plan svg { height: 78vh; min-height: 460px; }
   h1 { font-size: 23px; }
   header { flex-direction: column; align-items: flex-start; }
 }
@@ -630,12 +630,17 @@ body{margin:0}
   var BASE = { x: -18, y: -22, w: 267, h: 334 };
   var view = { z: 1, cx: BASE.x + BASE.w / 2, cy: BASE.y + BASE.h / 2 };
   function applyView() {
-    var w = BASE.w / view.z, h = BASE.h / view.z;
-    var x = Math.max(BASE.x, Math.min(BASE.x + BASE.w - w, view.cx - w / 2));
-    var y = Math.max(BASE.y, Math.min(BASE.y + BASE.h - h, view.cy - h / 2));
-    view.cx = x + w / 2;
-    view.cy = y + h / 2;
-    svg.setAttribute('viewBox', x + ' ' + y + ' ' + w + ' ' + h);
+    // The view always matches the shape of the plan area, so zooming in uses all of it.
+    var ew = svg.clientWidth || BASE.w, eh = svg.clientHeight || BASE.h;
+    var A = ew / eh, bw, bh;
+    if (A > BASE.w / BASE.h) { bh = BASE.h; bw = bh * A; } else { bw = BASE.w; bh = bw / A; }
+    var w = bw / view.z, h = bh / view.z;
+    function keep(c, size, min, len) {
+      return size >= len ? min + len / 2 : Math.max(min + size / 2, Math.min(min + len - size / 2, c));
+    }
+    view.cx = keep(view.cx, w, BASE.x, BASE.w);
+    view.cy = keep(view.cy, h, BASE.y, BASE.h);
+    svg.setAttribute('viewBox', (view.cx - w / 2) + ' ' + (view.cy - h / 2) + ' ' + w + ' ' + h);
     document.getElementById('zlabel').textContent = Math.round(view.z * 100) + '%';
   }
   function zoomBy(f) {
@@ -676,6 +681,8 @@ body{margin:0}
   buildPieces();
   drawOver();
   refresh();
+  applyView();
+  window.addEventListener('resize', applyView);
 })();
 </script>
 </body>
