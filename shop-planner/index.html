@@ -101,6 +101,9 @@ h1 { margin: 0; font-size: 26px; font-weight: 600; letter-spacing: 0.01em; text-
 .stage { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; align-items: start; }
 .plan { background: var(--surface); border: 1px solid var(--line); padding: 8px; min-width: 0; }
 .plan svg { display: block; width: 100%; height: auto; max-height: calc(100vh - 130px); user-select: none; -webkit-user-select: none; }
+.zoombar { display: flex; align-items: center; gap: 8px; margin: 0 4px 8px; }
+.zoombar button { min-width: 42px; padding: 5px 12px; font-size: 16px; }
+.zoombar .zl { font-family: var(--font-mono); font-size: 13px; color: var(--muted); min-width: 48px; }
 .hint { margin: 6px 4px 2px; color: var(--muted); font-size: 13px; }
 
 .side { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
@@ -175,12 +178,18 @@ body{margin:0}
 
   <div class="stage">
     <div class="plan">
+      <div class="zoombar">
+        <button id="zout" type="button" aria-label="Zoom out">&minus;</button>
+        <button id="zin" type="button" aria-label="Zoom in">+</button>
+        <button id="zfit" type="button" aria-label="Fit whole room">Fit</button>
+        <span class="zl" id="zlabel">100%</span>
+      </div>
       <svg id="svg" viewBox="-18 -22 267 334" role="img" aria-label="Top-down plan of the shop with movable furniture and equipment">
         <g id="static"></g>
         <g id="pieces"></g>
         <g id="over" pointer-events="none"></g>
       </svg>
-      <p class="hint">Drag a piece to move it. Click one, then use Rotate or Remove. Arrow keys nudge it 1 in. Dashed outlines turn red when pieces overlap or block the walkway.</p>
+      <p class="hint">Drag a piece to move it. Click one, then use Rotate or Remove. Arrow keys nudge it 1 in. Zoom with the buttons (or + and −), then drag empty floor to pan. Dashed outlines turn red when pieces overlap or block the walkway.</p>
     </div>
 
     <aside class="side">
@@ -505,6 +514,7 @@ body{margin:0}
 
   /* ---------- dragging ---------- */
   var drag = null;
+  var pan = null;
   function toSvg(e) {
     var pt = svg.createSVGPoint();
     pt.x = e.clientX; pt.y = e.clientY;
@@ -550,6 +560,8 @@ body{margin:0}
   document.addEventListener('keydown', function (e) {
     var tag = (e.target && e.target.tagName) || '';
     if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (e.key === '+' || e.key === '=') { zoomBy(1.4); return; }
+    if (e.key === '-') { zoomBy(1 / 1.4); return; }
     var p = selected ? byId[selected] : null;
     if (!p || p.removed) return;
     var k = e.key, step = e.shiftKey ? 6 : 1;
@@ -614,14 +626,50 @@ body{margin:0}
     refresh(); save();
   });
 
-  // Stop the page from scrolling while a piece is being dragged by touch (Safari ignores touch-action on SVG shapes).
-  svg.addEventListener('touchmove', function (e) { if (drag) e.preventDefault(); }, { passive: false });
+  /* ---------- zoom and pan ---------- */
+  var BASE = { x: -18, y: -22, w: 267, h: 334 };
+  var view = { z: 1, cx: BASE.x + BASE.w / 2, cy: BASE.y + BASE.h / 2 };
+  function applyView() {
+    var w = BASE.w / view.z, h = BASE.h / view.z;
+    var x = Math.max(BASE.x, Math.min(BASE.x + BASE.w - w, view.cx - w / 2));
+    var y = Math.max(BASE.y, Math.min(BASE.y + BASE.h - h, view.cy - h / 2));
+    view.cx = x + w / 2;
+    view.cy = y + h / 2;
+    svg.setAttribute('viewBox', x + ' ' + y + ' ' + w + ' ' + h);
+    document.getElementById('zlabel').textContent = Math.round(view.z * 100) + '%';
+  }
+  function zoomBy(f) {
+    view.z = Math.max(1, Math.min(5, view.z * f));
+    if (view.z < 1.02) view.z = 1;
+    applyView();
+  }
+  document.getElementById('zin').addEventListener('click', function () { zoomBy(1.4); });
+  document.getElementById('zout').addEventListener('click', function () { zoomBy(1 / 1.4); });
+  document.getElementById('zfit').addEventListener('click', function () {
+    view.z = 1; view.cx = BASE.x + BASE.w / 2; view.cy = BASE.y + BASE.h / 2; applyView();
+  });
+
+  // Stop the page from scrolling while a piece is dragged or the plan is panned by touch (Safari ignores touch-action on SVG shapes).
+  svg.addEventListener('touchmove', function (e) { if (drag || pan) e.preventDefault(); }, { passive: false });
 
   svg.addEventListener('pointerdown', function (e) {
-    if (e.target === svg || (e.target.closest && !e.target.closest('.piece'))) {
-      if (selected) { var prev = selected; selected = null; updateClasses(byId[prev]); renderSel(); renderList(); }
+    if (e.target.closest && e.target.closest('.piece')) return;
+    if (selected) { var prev = selected; selected = null; updateClasses(byId[prev]); renderSel(); renderList(); }
+    if (view.z > 1) {
+      pan = { sx: e.clientX, sy: e.clientY, cx: view.cx, cy: view.cy };
+      try { svg.setPointerCapture(e.pointerId); } catch (err) {}
     }
   });
+  svg.addEventListener('pointermove', function (e) {
+    if (!pan) return;
+    var k = svg.getScreenCTM().a;
+    view.cx = pan.cx - (e.clientX - pan.sx) / k;
+    view.cy = pan.cy - (e.clientY - pan.sy) / k;
+    applyView();
+  });
+  function endPan() { pan = null; }
+  svg.addEventListener('pointerup', endPan);
+  svg.addEventListener('pointercancel', endPan);
 
   drawStatic();
   load();
