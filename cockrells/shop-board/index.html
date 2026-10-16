@@ -10,6 +10,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Marcellus&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/cockrells/style.css">
+<style>
+.board{display:flex;gap:14px;overflow-x:auto;padding-bottom:12px}
+.col{flex:0 0 232px}
+.col h3{font-family:'Barlow Semi Condensed',sans-serif;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin:0 0 10px;padding:8px 10px;background:var(--ground2);border:1px solid #D8D4C8}
+.card{background:#fff;border:1px solid #D8D4C8;padding:14px;font-size:15px;line-height:1.45;color:#2B3038}
+.card b{display:block;font-family:'Barlow Semi Condensed',sans-serif;font-size:20px;color:var(--navy);margin-bottom:6px}
+.card .k{color:#6B6F78;font-size:13px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-top:6px}
+.card.late{border-left:6px solid #B23A2B}
+.late-tag{color:#B23A2B;font-weight:700}
+.tiles{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+.tile{flex:1 1 200px;background:#fff;border:1px solid #D8D4C8;padding:20px}
+.tile .n{font-family:'Barlow Semi Condensed',sans-serif;font-weight:700;font-size:56px;line-height:1;color:var(--navy)}
+.tile.warn .n{color:#B23A2B}
+.tile .t{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#6B6F78;margin-top:6px}
+.panels{display:flex;flex-wrap:wrap;gap:16px}
+.panel{flex:1 1 320px;background:#fff;border:1px solid #D8D4C8;padding:22px}
+.panel h3{font-family:'Barlow Semi Condensed',sans-serif;font-size:18px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:0 0 16px}
+.bar{display:flex;align-items:center;gap:12px;margin:9px 0;font-size:16px}
+.bar .nm{flex:0 0 96px}
+.bar .fill{height:22px;background:var(--navy)}
+.bar .v{font-weight:600}
+.row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #E5E1D5;font-size:16px}
+.row:first-of-type{border-top:0}
+.note{font-size:14px;color:#6B6F78;margin-top:14px}
+</style>
 </head>
 <body>
 <div class="banner">Concept for Cockrell's Auto Center by Liquid Machine &nbsp;/&nbsp; Demo with made-up cars and names</div>
@@ -19,7 +44,7 @@
 <div class="pagehead"><div class="wrap">
   <span class="lab eyebrow">Shop board / working demo</span>
   <h1>Every car, from drop-off to pickup.</h1>
-  <p class="lead">Enter a car, watch it move through the fifteen steps, and see the shop at a glance. Everything below is live, and every car and name is made up.</p>
+  <p class="lead">Enter a car, watch it move through the fifteen steps, and see the shop at a glance. The form is live, so you can try it, and every car and name is made up.</p>
 </div></div>
 
 <div class="sec"><div class="wrap">
@@ -28,13 +53,50 @@
 </div></div>
 
 <div class="sec alt"><div class="wrap">
-  <div class="sechead"><h2>2. Status</h2><p>Each car is a card, and each column is a step in the repair. Drag a car forward as the work gets done. New cars start in Uncategorized.</p></div>
-  <iframe class="airtable-embed" src="https://airtable.com/embed/appG5VsveSrJGW2cw/pagKdH4FnMPhmNlpN" frameborder="0" width="100%" height="760" style="background:transparent;border:1px solid #ccc" title="Where every car is"></iframe>
+  <div class="sechead"><h2>2. Status</h2><p>Each car is a card, and each column is a step in the repair. As the work gets done, the card moves forward to the next step.</p></div>
+  <div class="board">
+    <div class="col"><h3>01 Administrative</h3><div class="card"><b>2023 Subaru Outback</b>Pete Hargrove<span class="k">Tech</span>Dustin<span class="k">Waiting on</span>Customer<span class="k">Promised</span>Oct 23</div></div>
+    <div class="col"><h3>03 Disassembly</h3><div class="card"><b>2020 Hyundai Santa Fe</b>Lorraine Beckett<span class="k">Tech</span>Rusty<span class="k">Waiting on</span>Parts<span class="k">Promised</span>Oct 24</div></div>
+    <div class="col"><h3>04 Revised estimate</h3><div class="card"><b>2020 Jeep Wrangler</b>Ron Pelletier<span class="k">Tech</span>Marcus<span class="k">Waiting on</span>Insurance<span class="k">Promised</span>Oct 20</div></div>
+    <div class="col"><h3>05 Additional parts</h3><div class="card late"><b>2017 Honda Accord</b>Tom Reeves<span class="k">Tech</span>Marcus<span class="k">Waiting on</span>Parts<span class="k">Promised</span><span class="late-tag">Oct 12 · late</span></div></div>
+    <div class="col"><h3>06 Structural repairs</h3><div class="card"><b>2019 Chevrolet Silverado</b>Marcy Holloway<span class="k">Tech</span>Hank<span class="k">Waiting on</span>Nothing<span class="k">Promised</span>Oct 16</div></div>
+    <div class="col"><h3>07 Cosmetic repairs</h3><div class="card"><b>2015 GMC Sierra</b>Darnell Foss<span class="k">Tech</span>Caleb<span class="k">Waiting on</span>Nothing<span class="k">Promised</span>Oct 28</div></div>
+    <div class="col"><h3>09 Refinishing</h3><div class="card late"><b>2021 Ford F-150</b>Dale Whitaker<span class="k">Tech</span>Dustin<span class="k">Waiting on</span>Nothing<span class="k">Promised</span><span class="late-tag">Oct 8 · late</span></div></div>
+    <div class="col"><h3>14 Quality control</h3><div class="card late"><b>2022 Toyota RAV4</b>Janelle Ortiz<span class="k">Tech</span>Wyatt<span class="k">Waiting on</span>Nothing<span class="k">Promised</span><span class="late-tag">Oct 7 · late</span></div></div>
+    <div class="col"><h3>15 Return</h3><div class="card"><b>2018 Ram 1500</b>Gwen Aldridge<span class="k">Tech</span>Hank<span class="k">Waiting on</span>Customer<span class="k">Promised</span>Oct 6</div></div>
+  </div>
+  <p class="note">Picture of the live board. Scroll sideways to see every step.</p>
 </div></div>
 
 <div class="sec"><div class="wrap">
   <div class="sechead"><h2>3. Reports</h2><p>The service manager's view: cars in the shop, late cars, what each car is waiting on, and who has room for more work.</p></div>
-  <iframe class="airtable-embed" src="https://airtable.com/embed/appG5VsveSrJGW2cw/pagsQKRAPclXccua4" frameborder="0" width="100%" height="900" style="background:transparent;border:1px solid #ccc" title="Service manager overview"></iframe>
+  <div class="tiles">
+    <div class="tile"><div class="n">9</div><div class="t">Cars in the shop</div></div>
+    <div class="tile"><div class="n">85</div><div class="t">Scheduled hours</div></div>
+    <div class="tile warn"><div class="n">3</div><div class="t">Late cars</div></div>
+  </div>
+  <div class="panels">
+    <div class="panel"><h3>What cars are waiting on</h3>
+      <div class="bar"><span class="nm">Nothing</span><span class="fill" style="width:160px"></span><span class="v">4</span></div>
+      <div class="bar"><span class="nm">Customer</span><span class="fill" style="width:80px"></span><span class="v">2</span></div>
+      <div class="bar"><span class="nm">Parts</span><span class="fill" style="width:80px"></span><span class="v">2</span></div>
+      <div class="bar"><span class="nm">Insurance</span><span class="fill" style="width:40px"></span><span class="v">1</span></div>
+    </div>
+    <div class="panel"><h3>Scheduled hours by technician</h3>
+      <div class="bar"><span class="nm">Hank</span><span class="fill" style="width:250px"></span><span class="v">25</span></div>
+      <div class="bar"><span class="nm">Dustin</span><span class="fill" style="width:160px"></span><span class="v">16</span></div>
+      <div class="bar"><span class="nm">Caleb</span><span class="fill" style="width:160px"></span><span class="v">16</span></div>
+      <div class="bar"><span class="nm">Marcus</span><span class="fill" style="width:140px"></span><span class="v">14</span></div>
+      <div class="bar"><span class="nm">Rusty</span><span class="fill" style="width:80px"></span><span class="v">8</span></div>
+      <div class="bar"><span class="nm">Wyatt</span><span class="fill" style="width:60px"></span><span class="v">6</span></div>
+    </div>
+    <div class="panel"><h3>Needs attention first</h3>
+      <div class="row"><span><b>2022 Toyota RAV4</b><br>Janelle Ortiz · Quality control</span><span class="late-tag">9 days late</span></div>
+      <div class="row"><span><b>2021 Ford F-150</b><br>Dale Whitaker · Refinishing</span><span class="late-tag">8 days late</span></div>
+      <div class="row"><span><b>2017 Honda Accord</b><br>Tom Reeves · Additional parts</span><span class="late-tag">4 days late</span></div>
+    </div>
+  </div>
+  <p class="note">Picture of the manager's dashboard, made from the demo cars.</p>
 </div></div>
 
 <div class="foot"><div class="wrap">
