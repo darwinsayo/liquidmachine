@@ -9,7 +9,7 @@ Demo only. Every car, customer and technician name is made up. No prices, contac
 **Airtable base: "Cockrell's Repair Board (Demo)"** (base ID appG5VsveSrJGW2cw)
 - Tables: Repair Orders (job, customer, phone, insurance, step, waiting on, drop-off, promised, hours scheduled, technician, note for customer, late flag) and Technicians (name, role).
 - Steps run 01 Administrative to 15 Return. "Waiting on" is Nothing, Parts, Insurance or Customer.
-- Demo data: 9 cars and 6 technicians (Marcus, Dustin, Hank, Wyatt, Rusty, Caleb).
+- Demo data: 10 cars and 6 technicians (Marcus, Dustin, Hank, Wyatt, Rusty, Caleb).
 - Interface "Shop Floor": the board "Where every car is" and the dashboard "Service manager overview".
 - Standalone form "Drop Off Form": Job (required), Customer, Phone, Insurance, Technician, Drop-off, Promised, Hours scheduled, Note for customer. Step and Waiting on are left off, so new cars land in Uncategorized until moved to 01.
 
