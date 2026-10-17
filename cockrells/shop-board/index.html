@@ -27,7 +27,7 @@
 .panels{display:flex;flex-wrap:wrap;gap:16px}
 .panel{flex:1 1 320px;background:#fff;border:1px solid #D8D4C8;padding:22px}
 .panel h3{font-family:'Barlow Semi Condensed',sans-serif;font-size:18px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:0 0 16px}
-.bar{display:flex;align-items:center;gap:12px;margin:9px 0;font-size:16px}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:9px 0;font-size:16px}
 .bar .nm{flex:0 0 96px}
 .bar .fill{height:22px;background:var(--navy)}
 .bar .v{font-weight:600}
@@ -137,23 +137,38 @@
     }).join('');
   }
   function reports(cars,techs){
+    var WEEK=40.5; /* Mon to Thu 8 to 5 (9 hrs each) + Friday half day (4.5 hrs) */
     var late=cars.filter(function(c){return daysLate(c)>0;}).sort(function(a,b){return daysLate(b)-daysLate(a);});
+    var ready=cars.filter(function(c){return /^15/.test(c.step);});
+    var soon=cars.filter(function(c){
+      if(!c.promised||/^15/.test(c.step)) return false;
+      var d=Math.round((parse(c.promised)-parse(today))/86400000); return d>=0&&d<=3;
+    }).sort(function(a,b){return a.promised<b.promised?-1:1;});
     var hours=cars.reduce(function(n,c){return n+(+c.hours||0);},0);
     var tiles='<div class="tile"><div class="n">'+cars.length+'</div><div class="t">Cars in the shop</div></div>'+
       '<div class="tile"><div class="n">'+hours+'</div><div class="t">Scheduled hours</div></div>'+
-      '<div class="tile warn"><div class="n">'+late.length+'</div><div class="t">Late cars</div></div>';
+      '<div class="tile warn"><div class="n">'+late.length+'</div><div class="t">Late cars</div></div>'+
+      '<div class="tile"><div class="n">'+soon.length+'</div><div class="t">Due in 3 days</div></div>'+
+      '<div class="tile"><div class="n">'+ready.length+'</div><div class="t">Ready for pickup</div></div>';
     var w={};cars.forEach(function(c){var k=c.waiting||'Nothing';w[k]=(w[k]||0)+1;});
     var wRows=Object.keys(w).map(function(k){return [k,w[k]];}).sort(function(a,b){return b[1]-a[1];});
     var h={};techs.forEach(function(t){h[t]=0;});
     cars.forEach(function(c){var share=(+c.hours||0)/Math.max(1,c.techs.length);c.techs.forEach(function(t){h[t]=(h[t]||0)+share;});});
-    var hRows=Object.keys(h).sort().map(function(k){return [k,Math.round(h[k])];});
-    var top=Math.max.apply(null,hRows.map(function(r){return r[1];}).concat([1]));
-    var lateRows=late.length?late.slice(0,5).map(function(c){
-      return '<div class="row"><span><b>'+esc(c.job)+'</b><br>'+esc(c.customer)+' · '+esc(c.step)+'</span><span class="late-tag">'+daysLate(c)+' days late</span></div>';
-    }).join(''):'<div class="row"><span>No late cars.</span></div>';
-    var panels='<div class="panel"><h3>What cars are waiting on</h3>'+bars(wRows,40)+'</div>'+
-      '<div class="panel"><h3>Scheduled hours by technician</h3>'+bars(hRows,250/top)+'</div>'+
-      '<div class="panel"><h3>Needs attention first</h3>'+lateRows+'</div>';
+    var hRows=Object.keys(h).sort().map(function(k){
+      var v=Math.round(h[k]*2)/2, over=v>WEEK, open=Math.round((WEEK-v)*2)/2;
+      return '<div class="bar"><span class="nm">'+esc(k)+'</span><span class="fill" style="width:'+Math.round(Math.min(v/WEEK,1)*140)+'px'+(over?';background:#B23A2B':'')+'"></span>'+
+        '<span class="v">'+v+' hrs · '+(over?'over by '+(-open):open+' open')+'</span></div>';
+    }).join('');
+    function rowsOf(list,right){
+      return list.length?list.slice(0,5).map(function(c){
+        return '<div class="row"><span><b>'+esc(c.job)+'</b><br>'+esc(c.customer)+(c.step?' · '+esc(c.step):'')+'</span>'+right(c)+'</div>';
+      }).join(''):'<div class="row"><span>None right now.</span></div>';
+    }
+    var panels='<div class="panel"><h3>Needs attention first</h3>'+rowsOf(late,function(c){return '<span class="late-tag">'+daysLate(c)+' days late</span>';})+'</div>'+
+      '<div class="panel"><h3>Due in the next 3 days</h3>'+rowsOf(soon,function(c){return '<span>'+esc(fmt(c.promised))+'</span>';})+'</div>'+
+      '<div class="panel"><h3>Ready for pickup</h3>'+rowsOf(ready,function(c){return '<span>Call customer</span>';})+'</div>'+
+      '<div class="panel"><h3>What cars are waiting on</h3>'+bars(wRows,40)+'</div>'+
+      '<div class="panel"><h3>Hours vs. a 40.5-hour week</h3>'+hRows+'<p class="note">Mon to Thu 8 to 5, Friday half day. Hours are split evenly when a car has two techs.</p></div>';
     return {tiles:tiles,panels:panels};
   }
   fetch('/api/cars',{headers:{'Accept':'application/json'}}).then(function(r){
