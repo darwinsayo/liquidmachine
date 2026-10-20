@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website design for small businesses in Kentucky | Liquid Machine</title>
+<meta name="description" content="Liquid Machine designs clear, fast websites for small businesses in Kentucky. Plain conversation, real progress early, and a site you can keep up to date.">
+<link rel="canonical" href="https://liquidmachine.com/websites/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Website design for small businesses in Kentucky | Liquid Machine">
+<meta property="og:description" content="Clear, fast websites for small businesses, built around how you actually work.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://liquidmachine.com/websites/">
+<meta property="og:image" content="https://liquidmachine.com/hero.jpg">
+<meta name="theme-color" content="#161E2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Liquid Machine","url":"https://liquidmachine.com/","telephone":"+1-859-588-1837","email":"hello@liquidmachine.com","description":"Websites, social media setup, branding and custom dashboards for small businesses.","areaServed":{"@type":"State","name":"Kentucky"}}
+</script>
+<style>
+:root{
+  --sheet:#EDEFEC;
+  --paper:#FFFFFF;
+  --ink:#161E2B;
+  --ink-soft:#4A5463;
+  --signal:#3AA57C;
+  --signal-hover:#4DB98F;
+  --signal-soft:#8FD6B8;
+  --on-signal:#161E2B;
+  --pine:#1F5C4D;
+  --line:#D3D8D4;
+  --r-lg:28px; --r-sm:12px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--sheet);color:var(--ink);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+header{background:var(--ink);color:#fff;padding:22px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.mark{width:36px;height:36px;border-radius:10px;background:#fff;color:var(--ink);display:grid;place-items:center;font:800 .95rem "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;position:relative}
+.mark::after{content:"";position:absolute;right:5px;top:5px;width:6px;height:6px;border-radius:2px;background:var(--signal)}
+nav{display:flex;gap:26px;align-items:center;font-weight:500}
+nav a{text-decoration:none;color:rgba(255,255,255,.88)}
+nav a:hover{color:#fff}
+nav a.btn{color:var(--on-signal)}
+.btn{display:inline-block;background:var(--signal);color:var(--on-signal);font-weight:600;text-decoration:none;padding:14px 26px;border-radius:999px;transition:transform .15s,background .15s;font-size:1rem}
+.btn:hover{background:var(--signal-hover);transform:translateY(-2px)}
+nav .btn{padding:10px 20px}
+
+.intro{background:var(--ink);color:#fff;padding:56px 0 110px;border-radius:0 0 var(--r-lg) var(--r-lg)}
+.intro h1{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:800;max-width:17ch;margin-bottom:22px}
+.intro p{font-size:1.2rem;color:rgba(255,255,255,.88);max-width:46ch;margin-bottom:30px}
+
+.give{padding:90px 0 40px}
+.give h2,.fit h2,.how h2,.proof h2{font-size:clamp(2rem,4vw,3.1rem);font-weight:800;margin-bottom:36px;max-width:20ch}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.tile{background:var(--paper);border-radius:var(--r-lg);padding:32px 30px;box-shadow:0 30px 60px -40px rgba(22,30,43,.4)}
+.tile h3{font-size:1.4rem;font-weight:600;margin-bottom:10px}
+.tile p{color:var(--ink-soft)}
+
+.fit{padding:70px 0 20px}
+.fit ul{list-style:none;padding:0;display:grid;gap:14px;max-width:62ch}
+.fit li{padding-left:34px;position:relative;color:var(--ink-soft)}
+.fit li::before{content:"";position:absolute;left:0;top:.5em;width:18px;height:18px;border-radius:6px;background:var(--signal)}
+.fit li b{color:var(--ink)}
+
+.how{padding:80px 0 20px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font:800 1.1rem "Bricolage Grotesque",sans-serif;margin-bottom:18px}
+.step h3{font-size:1.5rem;font-weight:600;margin-bottom:8px}
+.step p{color:var(--ink-soft);max-width:30ch}
+
+.proof{padding:80px 0 20px}
+.proof p{color:var(--ink-soft);max-width:56ch;margin-bottom:16px}
+.proof a{font-weight:600;border-bottom:2px solid var(--signal);text-decoration:none}
+
+.contact{padding:70px 0 90px}
+.contact .box{background:var(--signal);color:var(--on-signal);border-radius:var(--r-lg);padding:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.contact h2{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+.contact p{margin-top:14px;max-width:38ch}
+.contact .btn{background:var(--ink);color:#fff;font-size:1.1rem;padding:18px 34px}
+.contact .btn:hover{background:#000}
+.contact small{display:block;margin-top:14px}
+.contact .phone{display:block;font:800 clamp(1.8rem,3.2vw,2.6rem) "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;text-decoration:none;margin-bottom:18px}
+.contact .phone:hover{text-decoration:underline;text-underline-offset:6px}
+footer{padding:0 0 40px;color:var(--ink-soft);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  nav a:not(.btn){display:none}
+  .grid,.steps,.contact .box{grid-template-columns:1fr}
+  .contact .box{padding:40px 26px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Liquid Machine home"><span class="mark" aria-hidden="true">LM</span>Liquid Machine</a>
+    <nav aria-label="Main">
+      <a href="/#services">What we build</a>
+      <a href="/#work">Our work</a>
+      <a href="/#process">How it works</a>
+      <a class="btn" href="#contact">Talk to us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="intro">
+  <div class="wrap">
+    <h1>Website design for small businesses in Kentucky.</h1>
+    <p>A clear, fast website that tells people what you do, shows them your work, and makes it easy to call you. Built around how your business actually runs.</p>
+    <a class="btn" href="#contact">Start a conversation</a>
+  </div>
+</section>
+
+<section class="give">
+  <div class="wrap">
+    <h2>What your website should do for you.</h2>
+    <div class="grid">
+      <div class="tile"><h3>Say what you do, fast</h3><p>A visitor should know what you offer and where you work within a few seconds, on a phone or on a computer.</p></div>
+      <div class="tile"><h3>Show your real work</h3><p>Photos, past projects and honest descriptions, so new customers can see what hiring you looks like.</p></div>
+      <div class="tile"><h3>Make it easy to reach you</h3><p>Your phone number, email and hours where people look first, with a simple way to ask for a quote or book.</p></div>
+      <div class="tile"><h3>Be found on Google</h3><p>Clear page titles, descriptions and a proper structure, so search engines understand your business and your area.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="fit">
+  <div class="wrap">
+    <h2>Who this is for.</h2>
+    <ul>
+      <li><b>Local service businesses.</b> Shops, trades, contractors, and anyone customers find by searching near them.</li>
+      <li><b>Venues and organizations.</b> Event halls, churches, schools and clubs that need schedules, forms and clear information.</li>
+      <li><b>Owners with an old or missing site.</b> Maybe your web host closed, or you have never had a site. Either way we start from where you are.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <h2>Simple from first call to finished site.</h2>
+    <div class="steps">
+      <div class="step"><h3>We talk</h3><p>You tell us how the business runs and what customers keep asking. We listen first.</p></div>
+      <div class="step"><h3>We build</h3><p>You see real progress early, and we adjust until it fits.</p></div>
+      <div class="step"><h3>We hand it over</h3><p>You get a walkthrough, plain-language notes, and someone who picks up when you call.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <h2>See finished sites.</h2>
+    <p>We built <a href="https://urlagehall.com" target="_blank" rel="noopener">urlagehall.com</a>, a wedding and event venue in Independence, Kentucky, and <a href="https://www.stmargaretmaryoak.org/" target="_blank" rel="noopener">stmargaretmaryoak.org</a>, a parish website. Both are live, so you can click around.</p>
+    <p><a href="/#work">See more recent work</a></p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <h2>Tell us what you need.</h2>
+        <p>We'll tell you honestly whether and how we can help.</p>
+      </div>
+      <div>
+        <a class="phone" href="tel:+18595881837">859-588-1837</a>
+        <a class="btn" href="mailto:hello@liquidmachine.com?subject=Website%20inquiry">Email Liquid Machine</a>
+        <small>hello@liquidmachine.com</small>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>&copy; 2026 Liquid Machine &nbsp;|&nbsp; <a href="tel:+18595881837">859-588-1837</a></span><span><a href="/">Back to the main page</a></span></div>
+</footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c030f8a532584bfa90668305cb51b236"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
