@@ -8,3 +8,6 @@
 
 /cockrells/*
   X-Robots-Tag: noindex, nofollow
+
+/maucotel/*
+  X-Robots-Tag: noindex, nofollow

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Jared Maucotel | Website concept</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#F6F1E7;--sand:#EDE5D4;--char:#1C1A19;--wine:#6E1F2E;--gold:#D8BE86;--gold-d:#8A6D32;--muted:#6B6258;--line:#CFC5B0}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--char);font:300 1.0625rem/1.65 "Jost",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400}
+.wrap{max-width:1344px;margin:0 auto;padding:0 48px}
+.eyebrow{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-d);margin-bottom:20px}
+.dark .eyebrow,.hero .eyebrow{color:var(--gold)}
+h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(40px,5vw,66px);line-height:1.05}
+h2 em,h3 em{font-style:italic}
+.btn{display:inline-block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 28px;font-weight:400}
+.btn-wine{background:var(--wine);color:var(--ivory);border:1px solid var(--gold)}
+.btn-ivory{background:var(--ivory);color:var(--char)}
+.btn-ghost{color:var(--ivory);border:1px solid var(--ivory)}
+.btn-ghost.g{border-color:var(--gold)}
+.btn:hover{filter:brightness(1.12)}
+.btn-ghost:hover{background:rgba(246,241,231,.14);filter:none}
+.banner{background:var(--char);color:var(--gold);text-align:center;font-size:13px;letter-spacing:.06em;padding:10px 16px;border-bottom:1px solid #4A433C}
+
+/* hero */
+.hero{position:relative;min-height:820px;background:var(--char);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;color:var(--ivory)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,16,15,.72) 0%,rgba(20,16,15,.15) 32%,rgba(20,16,15,.35) 58%,rgba(20,16,15,.92) 100%)}
+.hero>*:not(img){position:relative;z-index:2}
+.nav{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between;padding:28px 48px}
+.mark{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.06em;font-weight:500}
+.mark i{color:var(--gold)}
+.nav nav{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center}
+.nav nav a:not(.btn){font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:12px 4px}
+.nav nav a:not(.btn):hover{color:var(--gold)}
+.nav .btn{padding:14px 24px}
+.hero-copy{max-width:1344px;margin:0 auto;width:100%;padding:0 48px 72px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(64px,11vw,168px);line-height:.92;letter-spacing:-.01em}
+.hero h1 em{display:block;padding-left:.9em}
+.hero-row{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between;margin-top:48px}
+.hero-row p{max-width:460px;font-size:19px;line-height:1.55}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+
+/* about */
+.about{padding:120px 0 100px}
+.about .wrap{display:flex;flex-wrap:wrap;gap:72px;align-items:center}
+.portrait{flex:1 1 340px;max-width:480px;position:relative}
+.portrait img{width:100%;aspect-ratio:2/3;object-fit:cover;background:#2A2523}
+.portrait::after{content:"";position:absolute;left:-20px;right:20px;top:20px;bottom:-20px;border:1px solid var(--gold-d);z-index:-1}
+.about-copy{flex:1.2 1 400px;min-width:0}
+.about-copy h2{margin-bottom:32px}
+.about-copy h2 em{color:var(--wine)}
+.about-copy>p{font-size:18px;max-width:620px}
+.facts{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--char)}
+.facts div{padding:22px 24px;border-bottom:1px solid var(--line)}
+.facts div:nth-child(odd){padding-left:0}
+.facts div:nth-child(2){border-left:1px solid var(--line)}
+.facts div:nth-child(3){grid-column:span 2;border-bottom:0}
+.facts small{display:block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.facts p{font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.25;font-weight:400}
+
+/* performances */
+.dark{background:var(--char);color:var(--ivory);padding:110px 0}
+.dark .wrap{display:flex;flex-wrap:wrap;gap:64px}
+.perf-intro{flex:1 1 300px;max-width:380px}
+.perf-intro h2{margin-bottom:24px}
+.perf-intro p{color:#D9D2C4}
+.perf-list{flex:2 1 460px;min-width:0}
+.perf-list .lab{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.perf-list .lab.past{color:#B8AF9F;margin-top:44px}
+.perf-list .group{border-top:1px solid var(--muted)}
+.perf-row{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--muted)}
+.perf-row .d{font-family:"Cormorant Garamond",serif;font-size:30px;width:150px;color:var(--gold)}
+.perf-row .past-d{color:#B8AF9F}
+.perf-row .t{flex:1 1 260px}
+.perf-row .t b{display:block;font-family:"Cormorant Garamond",serif;font-weight:400;font-size:30px;line-height:1.2;margin-bottom:4px}
+.perf-row .t span{font-size:15px;color:#D9D2C4;line-height:1.5;display:block}
+.tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--gold);padding:8px 14px;color:var(--gold)}
+
+/* media */
+.media{padding:110px 0 60px}
+.media-head{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;justify-content:space-between;margin-bottom:48px}
+.media-head h2 em{color:var(--wine)}
+.media-head a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--char);padding-bottom:6px}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.vid .th{position:relative;aspect-ratio:16/10;overflow:hidden;background:#2A2523}
+.vid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.vid:hover img{transform:scale(1.04)}
+.play{position:absolute;left:16px;bottom:16px;width:52px;height:52px;border-radius:50%;background:var(--ivory);display:flex;align-items:center;justify-content:center}
+.vid p{margin-top:14px;font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.2}
+
+/* gallery */
+.gallery{padding:60px 0 110px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;align-items:end}
+.gal img{width:100%;object-fit:cover;background:#2A2523}
+
+/* studio */
+.studio{background:var(--sand);padding:110px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.card{padding:48px 44px;border-top:3px solid var(--wine);background:var(--ivory)}
+.card.k{background:var(--char);color:var(--ivory);border-top-color:var(--gold)}
+.card h3{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:42px;line-height:1.1;margin:0 0 20px}
+.card p{margin-bottom:32px}
+.card.k p{color:#D9D2C4}
+
+/* quote */
+.quote{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;background:var(--char);overflow:hidden}
+.quote>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.quote::before{content:"";position:absolute;inset:0;background:rgba(20,16,15,.62);z-index:1}
+.quote blockquote{position:relative;z-index:2;padding:80px 32px;max-width:900px;text-align:center;color:var(--ivory)}
+.quote blockquote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(34px,5vw,64px);line-height:1.15;margin-bottom:28px}
+.quote cite{font-style:normal;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+
+/* footer */
+footer{background:var(--char);color:var(--ivory);padding:100px 0 40px}
+footer .top{display:flex;flex-wrap:wrap;gap:64px;justify-content:space-between}
+.contact{flex:1 1 380px;max-width:560px}
+.contact h2{margin-bottom:32px}
+.contact form{display:flex;flex-wrap:wrap;gap:12px}
+.contact input{flex:1 1 240px;min-height:52px;padding:0 18px;background:transparent;border:1px solid #8F8677;color:var(--ivory);font:300 16px "Jost",sans-serif}
+.contact button{min-height:52px;padding:0 28px;background:var(--ivory);color:var(--char);border:0;font:400 13px "Jost",sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.social{flex:0 1 280px;display:flex;flex-direction:column;gap:14px;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+.social a:hover{color:var(--gold)}
+.bottom{margin-top:80px;padding-top:28px;border-top:1px solid #4A433C;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:#B8AF9F}
+.bottom i{font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--gold)}
+.sr{position:absolute;left:-9999px}
+
+@media(max-width:700px){
+  .wrap,.nav,.hero-copy{padding-left:24px;padding-right:24px}
+  .about{padding:80px 0 70px}
+  .facts{grid-template-columns:1fr}
+  .facts div,.facts div:nth-child(odd){padding-left:0;border-left:0!important}
+  .facts div:nth-child(3){grid-column:auto}
+  .card{padding:36px 28px}
+  .portrait::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="banner">Concept for Jared Maucotel by Liquid Machine &nbsp;/&nbsp; Not his live website</div>
+
+<header class="hero" id="top">
+  <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YBgr4jzErkHV304l/7447protege-1615-AMqb4eJ5bOfnZojw.jpg" alt="Jared Maucotel performing on violin">
+  <div class="nav">
+    <a class="mark" href="#top">Maucotel <i>Music</i></a>
+    <nav>
+      <a href="#about">About</a><a href="#performances">Performances</a><a href="#media">Media</a><a href="#studio">Studio</a><a href="#contact">Contact</a>
+      <a class="btn btn-wine" href="#contact">Book Lessons</a>
+    </nav>
+  </div>
+  <div class="hero-copy">
+    <p class="eyebrow">Violinist &nbsp;·&nbsp; Violist &nbsp;·&nbsp; Teacher</p>
+    <h1>Jared<em>Maucotel</em></h1>
+    <div class="hero-row">
+      <p>Exploring and sharing all that is beautiful, from the solo and chamber repertoire to the teaching studio.</p>
+      <div class="btns"><a class="btn btn-ivory" href="#performances">Next performance</a><a class="btn btn-ghost" href="#media">Watch &amp; listen</a></div>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="portrait"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1536,fit=crop/YBgr4jzErkHV304l/ceylonmitchell_320a3103-edit-jyj2YxR14YoNeOWc.jpg" alt="Jared Maucotel with his violin"></div>
+    <div class="about-copy">
+      <p class="eyebrow">About</p>
+      <h2>An accomplished and <em>inquisitive</em> performer.</h2>
+      <p>Jared is deeply interested in exploring and sharing music with all audiences. He maintains a performing career in both solo and chamber music, and has taught and managed his own violin studio for more than a decade.</p>
+      <div class="facts">
+        <div><small>Doctorate in progress</small><p>Cincinnati Conservatory of Music, with Kurt Sassmannshaus</p></div>
+        <div><small>Bachelor's &amp; Master's</small><p>Violin performance, University of Texas at Austin</p></div>
+        <div><small>The instrument</small><p>A Silvestre et Maucotel violin, Paris, 1909</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="performances">
+  <div class="wrap">
+    <div class="perf-intro">
+      <p class="eyebrow">Performances</p>
+      <h2>Come and <em>listen.</em></h2>
+      <p>Recitals, chamber concerts and collaborations. Most are free and open to the public.</p>
+    </div>
+    <div class="perf-list">
+      <p class="lab">Upcoming</p>
+      <div class="group">
+        <div class="perf-row"><span class="d">[DATE]</span><div class="t"><b>[CONCERT TITLE]</b><span>[VENUE, CITY] &nbsp;·&nbsp; [TIME]</span></div><span class="tag">Details</span></div>
+        <div class="perf-row"><span class="d">[DATE]</span><div class="t"><b>[CONCERT TITLE]</b><span>[VENUE, CITY] &nbsp;·&nbsp; [TIME]</span></div><span class="tag">Details</span></div>
+      </div>
+      <p class="lab past">Recently</p>
+      <div class="group">
+        <div class="perf-row"><span class="d past-d">Apr 28, 2026</span><div class="t"><b>CCM Student Showcase</b><span>Werner Recital Hall &nbsp;·&nbsp; Final recital of the Clementine Quartet: Dvořák's "American" Quartet and Franck's Violin Sonata</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="media" id="media">
+  <div class="wrap">
+    <div class="media-head">
+      <div><p class="eyebrow">Media</p><h2>Performer <em>&amp;</em> arranger</h2></div>
+      <a href="https://www.youtube.com/@jaredmaucotel6321">Full YouTube channel →</a>
+    </div>
+    <div class="vids">
+      <a class="vid" href="https://www.youtube.com/watch?v=e9XOm48dN1I"><div class="th"><img src="https://i.ytimg.com/vi/e9XOm48dN1I/hqdefault.jpg" alt="Video thumbnail" loading="lazy"><span class="play"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M5 2.5v13l11-6.5z" fill="#6E1F2E"/></svg></span></div><p>[PIECE TITLE]</p></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=3kIK82nIqGw"><div class="th"><img src="https://i.ytimg.com/vi/3kIK82nIqGw/hqdefault.jpg" alt="Video thumbnail" loading="lazy"><span class="play"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M5 2.5v13l11-6.5z" fill="#6E1F2E"/></svg></span></div><p>[PIECE TITLE]</p></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=ElCrxt3_XiU"><div class="th"><img src="https://i.ytimg.com/vi/ElCrxt3_XiU/hqdefault.jpg" alt="Video thumbnail" loading="lazy"><span class="play"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M5 2.5v13l11-6.5z" fill="#6E1F2E"/></svg></span></div><p>[PIECE TITLE]</p></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=-s3NO9P4FyY"><div class="th"><img src="https://i.ytimg.com/vi/-s3NO9P4FyY/hqdefault.jpg" alt="Video thumbnail" loading="lazy"><span class="play"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M5 2.5v13l11-6.5z" fill="#6E1F2E"/></svg></span></div><p>[PIECE TITLE]</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="gal">
+      <img style="aspect-ratio:3/4" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=1024,fit=crop/YBgr4jzErkHV304l/img_7717-2-mxBZZ1xp4RcKR1xk.jpg" alt="Jared Maucotel, gallery photo" loading="lazy">
+      <img style="aspect-ratio:2/3" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1538,fit=crop/YBgr4jzErkHV304l/ceylonmitchell_320a3092-IOVmUILpNgrfMi9n.jpg" alt="Jared Maucotel with violin" loading="lazy">
+      <img style="aspect-ratio:3/4" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/YBgr4jzErkHV304l/3r0a7676-mv0DDQJJlahBa3Dv.JPG" alt="Performance photo" loading="lazy">
+      <img style="aspect-ratio:4/5" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=1024,fit=crop/YBgr4jzErkHV304l/img_5778-AzGee1aPWJFeG68V.jpg" alt="Chamber music photo" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="studio" id="studio">
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <p class="eyebrow">The studio</p>
+        <h3>Violin lessons for <em>every age</em></h3>
+        <p>More than a decade of teaching, with a focus on personalized and diverse learning.</p>
+        <a class="btn btn-wine" href="#contact">Inquire about lessons</a>
+      </div>
+      <div class="card k">
+        <p class="eyebrow" style="color:var(--gold)">Recording services</p>
+        <h3>Recording <em>&amp; arranging</em></h3>
+        <p>[ONE LINE ON WHAT JARED OFFERS: session violin, string arrangements, etc.]</p>
+        <a class="btn btn-ghost g" href="#contact">Start a project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YBgr4jzErkHV304l/dsc04136-Yany9XkgvxivNwrn.jpeg" alt="" loading="lazy">
+  <blockquote><p>“Perhaps it is music that will save the world.”</p><cite>Pablo Casals</cite></blockquote>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="top">
+      <div class="contact">
+        <p class="eyebrow" style="color:var(--gold)">Contact</p>
+        <h2>Let's make <em>something beautiful.</em></h2>
+        <form onsubmit="return false">
+          <label class="sr" for="em">Email address</label>
+          <input id="em" type="email" placeholder="Your email address">
+          <button type="button">Send inquiry</button>
+        </form>
+      </div>
+      <div class="social">
+        <a href="https://www.instagram.com/maucotelviolin">Instagram</a>
+        <a href="https://www.youtube.com/@jaredmaucotel6321">YouTube</a>
+        <a href="https://www.facebook.com/MaucotelMusic/">Facebook</a>
+        <a href="https://www.linkedin.com/in/jared-maucotel-ab56a4204/">LinkedIn</a>
+      </div>
+    </div>
+    <div class="bottom"><i>A standard of beauty for the world</i><span>Website concept by Liquid Machine &nbsp;/&nbsp; Photos and text from jaredmaucotel.com</span></div>
+  </div>
+</footer>
+</body>
+</html>
