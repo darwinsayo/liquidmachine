@@ -98,6 +98,10 @@ nav .btn{padding:10px 20px}
 .proj .frame span{margin-left:10px;flex:1;max-width:260px;background:#F6F7F5;border-radius:999px;padding:3px 14px;font-size:.78rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .proj .frame{padding-bottom:12px}
 .proj img{display:block;width:100%;height:auto;aspect-ratio:10/7;object-fit:cover;object-position:top center}
+.proj.wide{grid-column:1/-1;display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:auto 1fr}
+.proj.wide .frame{grid-column:1;grid-row:1}
+.proj.wide img{grid-column:1;grid-row:2;aspect-ratio:auto;height:100%;object-fit:cover}
+.proj.wide .cap{grid-column:2;grid-row:1/3;align-self:center}
 .proj .cap{padding:24px 26px 28px}
 .proj .tag{font:600 .85rem "Instrument Sans",sans-serif;color:var(--pine)}
 .proj h3{font-size:1.6rem;font-weight:800;margin:6px 0 10px}
@@ -168,6 +172,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .svc{grid-template-columns:104px 1fr;gap:18px}
   .svc .art{width:104px;height:72px}
   .work-grid{grid-template-columns:1fr}
+  .proj.wide{display:block}
+  .proj.wide img{height:auto;aspect-ratio:10/7}
   .steps{grid-template-columns:1fr;gap:34px}
   .step::after{display:none}
   .contact .box{padding:40px 26px}
@@ -235,7 +241,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <section class="work" id="work">
   <div class="wrap">
     <h2>Recent work</h2>
-    <p class="sub">Real websites for local organizations, built to be clear, easy to use and easy to keep up to date.</p>
+    <p class="sub">Real websites for real people and organizations, built to be clear, easy to use and easy to keep up to date.</p>
     <div class="work-grid">
       <a class="proj" href="https://urlagehall.com" target="_blank" rel="noopener">
         <div class="frame"><i></i><i></i><i></i><span>urlagehall.com</span></div>
@@ -255,6 +261,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <h3>St. Margaret Mary Catholic Church</h3>
           <p>A parish website in Oakland. Mass and confession times, bulletins, ministries, online giving, registration forms and email sign-up, all easy to find.</p>
           <span class="visit">Visit stmargaretmaryoak.org</span>
+        </div>
+      </a>
+      <a class="proj wide" href="https://shadesofbeautiful.com" target="_blank" rel="noopener">
+        <div class="frame"><i></i><i></i><i></i><span>shadesofbeautiful.com</span></div>
+        <img src="/work-shades.jpg" alt="Shades of Beautiful homepage: script wordmark above a sunlit photo of a bride on a fabric swing" width="1400" height="737" loading="lazy">
+        <div class="cap">
+          <span class="tag">Website and photography</span>
+          <h3>Shades of Beautiful</h3>
+          <p>A personal photo journal with a portfolio, written posts and a quiet way to say hello. Light, elegant and built around the pictures.</p>
+          <span class="visit">Visit shadesofbeautiful.com</span>
         </div>
       </a>
     </div>
