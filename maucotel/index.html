@@ -32,7 +32,7 @@ h2 em,h3 em{font-style:italic}
 .banner{background:var(--char);color:var(--gold);text-align:center;font-size:13px;letter-spacing:.06em;padding:10px 16px;border-bottom:1px solid #4A433C}
 
 /* hero */
-.hero{position:relative;min-height:calc(100vh - 74px);background:var(--char);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;color:var(--ivory)}
+.hero{position:relative;min-height:calc(100vh - 84px);background:var(--char);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;color:var(--ivory)}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;transform:scale(1.4);transform-origin:0% 66%}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,16,15,.25) 0%,rgba(20,16,15,.45) 30%,rgba(20,16,15,.80) 62%,rgba(20,16,15,.95) 100%)}
 .hero .eyebrow{color:#EBD8A8;font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.7)}
@@ -40,11 +40,11 @@ h2 em,h3 em{font-style:italic}
 .hero-row p{font-weight:400}
 .hero>*:not(img){position:relative;z-index:2}
 .nav{position:sticky;top:0;z-index:100;color:var(--ivory);background:rgba(28,26,25,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(216,190,134,.25);display:flex;flex-wrap:wrap;gap:8px 40px;align-items:center;justify-content:space-between;padding:10px 48px}
-html{scroll-padding-top:84px}
+html{scroll-padding-top:94px}
 .mark{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.06em;font-weight:500}
 .mark{display:block;line-height:0}
-.mark img{height:54px;width:auto}
-.flogo{height:96px;width:auto;margin-bottom:40px}
+.mark img{height:64px;width:auto}
+.flogo{height:140px;width:auto;margin-bottom:40px}
 .nav nav{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center}
 .nav nav a:not(.btn){font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:12px 4px}
 .nav nav a:not(.btn):hover{color:var(--gold)}
@@ -143,8 +143,8 @@ footer .top{display:flex;flex-wrap:wrap;gap:64px;justify-content:space-between}
 @media(max-width:700px){
   .wrap,.nav,.hero-copy{padding-left:24px;padding-right:24px}
   .nav nav a:not(.btn){padding:8px 2px;font-size:12px}
-  .mark img{height:44px}
-  .flogo{height:72px}
+  .mark img{height:52px}
+  .flogo{height:96px}
   html{scroll-padding-top:120px}
   .hero>img{object-position:38% 50%;transform:scale(1.12);transform-origin:50% 50%}
   .about{padding:80px 0 70px}
