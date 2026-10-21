@@ -32,11 +32,15 @@ h2 em,h3 em{font-style:italic}
 .banner{background:var(--char);color:var(--gold);text-align:center;font-size:13px;letter-spacing:.06em;padding:10px 16px;border-bottom:1px solid #4A433C}
 
 /* hero */
-.hero{position:relative;min-height:820px;background:var(--char);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;color:var(--ivory)}
+.hero{position:relative;min-height:780px;background:var(--char);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;color:var(--ivory)}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,16,15,.72) 0%,rgba(20,16,15,.15) 32%,rgba(20,16,15,.35) 58%,rgba(20,16,15,.92) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,16,15,.25) 0%,rgba(20,16,15,.45) 30%,rgba(20,16,15,.80) 62%,rgba(20,16,15,.95) 100%)}
+.hero .eyebrow{color:#EBD8A8;font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.7)}
+.hero h1,.hero-row p{text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.hero-row p{font-weight:400}
 .hero>*:not(img){position:relative;z-index:2}
-.nav{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between;padding:28px 48px}
+.nav{position:sticky;top:0;z-index:100;color:var(--ivory);background:rgba(28,26,25,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(216,190,134,.25);display:flex;flex-wrap:wrap;gap:8px 40px;align-items:center;justify-content:space-between;padding:12px 48px}
+html{scroll-padding-top:84px}
 .mark{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.06em;font-weight:500}
 .mark i{color:var(--gold)}
 .nav nav{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center}
@@ -136,6 +140,8 @@ footer .top{display:flex;flex-wrap:wrap;gap:64px;justify-content:space-between}
 
 @media(max-width:700px){
   .wrap,.nav,.hero-copy{padding-left:24px;padding-right:24px}
+  .nav nav a:not(.btn){padding:8px 2px;font-size:12px}
+  html{scroll-padding-top:120px}
   .about{padding:80px 0 70px}
   .facts{grid-template-columns:1fr}
   .facts div,.facts div:nth-child(odd){padding-left:0;border-left:0!important}
@@ -148,15 +154,16 @@ footer .top{display:flex;flex-wrap:wrap;gap:64px;justify-content:space-between}
 <body>
 <div class="banner">Concept for Jared Maucotel by Liquid Machine &nbsp;/&nbsp; Not his live website</div>
 
-<header class="hero" id="top">
+<header class="nav">
+  <a class="mark" href="#top">Maucotel <i>Music</i></a>
+  <nav>
+    <a href="#about">About</a><a href="#performances">Performances</a><a href="#media">Media</a><a href="#studio">Studio</a><a href="#contact">Contact</a>
+    <a class="btn btn-wine" href="#contact">Book Lessons</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
   <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YBgr4jzErkHV304l/7447protege-1615-AMqb4eJ5bOfnZojw.jpg" alt="Jared Maucotel performing on violin">
-  <div class="nav">
-    <a class="mark" href="#top">Maucotel <i>Music</i></a>
-    <nav>
-      <a href="#about">About</a><a href="#performances">Performances</a><a href="#media">Media</a><a href="#studio">Studio</a><a href="#contact">Contact</a>
-      <a class="btn btn-wine" href="#contact">Book Lessons</a>
-    </nav>
-  </div>
   <div class="hero-copy">
     <p class="eyebrow">Violinist &nbsp;·&nbsp; Violist &nbsp;·&nbsp; Teacher</p>
     <h1>Jared<em>Maucotel</em></h1>
@@ -165,7 +172,7 @@ footer .top{display:flex;flex-wrap:wrap;gap:64px;justify-content:space-between}
       <div class="btns"><a class="btn btn-ivory" href="#performances">Next performance</a><a class="btn btn-ghost" href="#media">Watch &amp; listen</a></div>
     </div>
   </div>
-</header>
+</section>
 
 <section class="about" id="about">
   <div class="wrap">
