@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>L &amp; L Landscaping | Cynthiana, KY</title>
+<meta name="description" content="L & L Landscaping in Cynthiana, Kentucky. Landscape design and installation, maintenance, mowing, minor tree pruning, commercial snow removal, plus landscaping plants, mums and seasonal items. 30+ years of experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1d4d2f; --green-dk:#133621; --leaf:#6aa83a; --leaf-lt:#e8f3df;
+  --white:#ffffff; --mist:#f4f6f2; --line:#e3e8df;
+  --ink:#18211a; --muted:#5b6659;
+  --sky:#e7f1f8; --sky-ink:#245a7e;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1200px,92vw);margin-inline:auto}
+h1,h2,h3{font-weight:800;line-height:1.1;letter-spacing:-.025em}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf)}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+.section{padding:clamp(80px,10vw,128px) 0}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(2rem,4vw,3.1rem);margin:14px 0 16px;color:var(--green-dk)}
+.sec-head p{font-size:1.1rem;color:var(--muted)}
+.center{text-align:center;margin-inline:auto}
+.center .eyebrow{justify-content:center}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:8px;font:700 .97rem/1 var(--font);text-decoration:none;border:0;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 24px -12px rgba(29,77,47,.7)}
+.btn-primary:hover{background:var(--green-dk)}
+.btn-leaf{background:var(--leaf);color:#fff;box-shadow:0 10px 24px -12px rgba(106,168,58,.8)}
+.btn-leaf:hover{background:#5a9530}
+.btn-light{background:#fff;color:var(--green-dk)}
+.btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;background:transparent}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+.btn-line{border:2px solid var(--green);color:var(--green);background:transparent}
+.btn-line:hover{background:var(--green);color:#fff}
+
+/* Header */
+header{position:fixed;inset:0 0 auto;z-index:50;padding:20px 0;transition:background .3s,padding .3s,box-shadow .3s}
+header.solid{background:rgba(255,255,255,.97);backdrop-filter:blur(10px);padding:12px 0;box-shadow:0 1px 0 var(--line),0 10px 30px -20px rgba(0,0,0,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;transition:color .3s}
+header.solid .logo{color:var(--green-dk)}
+.mark{width:46px;height:46px;border-radius:10px;background:var(--green);display:grid;place-items:center;color:#fff;font-weight:800;font-size:1rem;letter-spacing:-.02em;box-shadow:inset 0 -4px 0 var(--leaf)}
+header:not(.solid) .mark{background:rgba(255,255,255,.14);backdrop-filter:blur(6px);box-shadow:inset 0 -4px 0 var(--leaf),0 0 0 1px rgba(255,255,255,.3)}
+.logo-txt{line-height:1.1}
+.logo-txt b{display:block;font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+.logo-txt span{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.links{display:flex;gap:28px;align-items:center}
+.links a:not(.btn){color:#fff;text-decoration:none;font-weight:600;font-size:.93rem;opacity:.9;transition:color .3s,opacity .2s}
+header.solid .links a:not(.btn){color:var(--ink)}
+.links a:not(.btn):hover{opacity:1;color:var(--leaf)}
+.links .btn{padding:12px 20px;font-size:.9rem}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--green-dk)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 65%;transform:scale(1.05);animation:settle 16s ease-out forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(14,38,22,.86) 0%,rgba(14,38,22,.62) 42%,rgba(14,38,22,.08) 78%)}
+.hero-in{position:relative;z-index:2;padding:140px 0 170px}
+.hero .eyebrow{color:#b9e08f}
+.hero h1{font-size:clamp(2.7rem,6.6vw,5.6rem);margin:20px 0 22px;max-width:13ch}
+.hero h1 span{color:#b9e08f}
+.hero p{font-size:clamp(1.05rem,1.5vw,1.22rem);max-width:46ch;opacity:.92}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero-trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;font-size:.92rem;font-weight:600}
+.hero-trust span{display:flex;align-items:center;gap:8px;opacity:.92}
+.hero-trust svg{width:18px;height:18px;color:#b9e08f}
+.hills{position:absolute;left:0;right:0;bottom:-1px;z-index:3;width:100%;height:auto;display:block}
+
+/* Stats */
+.stats{position:relative;z-index:4;margin-top:-70px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:16px;box-shadow:0 30px 60px -30px rgba(19,54,33,.35),0 0 0 1px var(--line)}
+.stat{padding:30px 28px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat strong{display:block;font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:800;color:var(--green);letter-spacing:-.03em;line-height:1}
+.stat span{display:block;margin-top:8px;color:var(--muted);font-size:.92rem;font-weight:500}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(19,54,33,.45)}
+.svc-img{aspect-ratio:4/3.3;overflow:hidden;position:relative}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.svc:hover .svc-img img{transform:scale(1.06)}
+.svc-num{position:absolute;top:14px;left:14px;background:#fff;color:var(--green);font-weight:800;font-size:.8rem;padding:6px 10px;border-radius:6px}
+.svc-body{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column}
+.svc h3{font-size:1.22rem;color:var(--green-dk);margin-bottom:10px}
+.svc p{color:var(--muted);font-size:.96rem}
+.svc ul{list-style:none;margin-top:16px;display:grid;gap:7px;font-size:.9rem;font-weight:600}
+.svc li{display:flex;gap:9px;align-items:center}
+.svc li::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;background:var(--leaf-lt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236aa83a' stroke-width='4'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/10px no-repeat}
+
+/* Snow */
+.snow{background:var(--sky);position:relative;overflow:hidden}
+.snow-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,90px);align-items:center}
+.snow .eyebrow{color:var(--sky-ink)}
+.snow h2{font-size:clamp(2rem,4vw,3.2rem);margin:14px 0 18px;color:#14334a}
+.snow p{color:#3d5567;font-size:1.08rem;max-width:46ch}
+.snow-list{list-style:none;margin:26px 0 34px;display:grid;gap:12px}
+.snow-list li{display:flex;gap:14px;align-items:center;font-weight:700;color:#14334a}
+.snow-list i{width:38px;height:38px;border-radius:10px;background:#fff;display:grid;place-items:center;color:var(--sky-ink);box-shadow:0 6px 16px -10px rgba(36,90,126,.6)}
+.snow-list svg{width:19px;height:19px}
+.snow-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.snow-photos img{border-radius:14px;aspect-ratio:3/4;object-fit:cover;width:100%;box-shadow:0 30px 50px -30px rgba(20,51,74,.6)}
+.snow-photos img:last-child{transform:translateY(40px)}
+.btn-sky{background:var(--sky-ink);color:#fff}
+.btn-sky:hover{background:#1a4563}
+.flakes{position:absolute;inset:0;pointer-events:none}
+.flakes i{position:absolute;top:-10px;border-radius:50%;background:#fff;opacity:.9;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(40px,900px);opacity:0}}
+.snow .wrap{position:relative;z-index:1}
+
+/* Plants */
+.plants-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.tile{position:relative;border-radius:14px;overflow:hidden;min-height:260px;color:#fff;isolation:isolate}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s}
+.tile:hover img{transform:scale(1.06)}
+.tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(12,30,18,.82) 0%,rgba(12,30,18,0) 58%)}
+.tile-txt{position:absolute;left:24px;right:24px;bottom:22px}
+.tile h3{font-size:1.35rem}
+.tile p{font-size:.92rem;opacity:.88;margin-top:4px}
+.tile.big{grid-row:span 2;min-height:540px}
+.tile.big h3{font-size:1.8rem}
+.stock{margin-top:28px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--leaf-lt);border-radius:14px;padding:26px 30px}
+.stock-txt{display:flex;gap:18px;align-items:center}
+.stock-txt i{width:50px;height:50px;border-radius:12px;background:#fff;color:var(--leaf);display:grid;place-items:center;flex:none}
+.stock-txt i svg{width:24px;height:24px}
+.stock b{display:block;font-size:1.12rem;color:var(--green-dk)}
+.stock span{color:var(--muted);font-size:.95rem}
+.stock .btns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* About */
+.about{background:var(--mist)}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.about-photo{position:relative}
+.about-photo img{border-radius:16px;aspect-ratio:4/4.6;object-fit:cover;width:100%}
+.est{position:absolute;right:-26px;bottom:36px;width:138px;height:138px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-content:center;text-align:center;box-shadow:0 0 0 8px var(--mist),0 20px 40px -15px rgba(0,0,0,.4)}
+.est small{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.est strong{font-size:2.1rem;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.about h2{font-size:clamp(2rem,4vw,3.1rem);margin:14px 0 20px;color:var(--green-dk)}
+.about p{color:var(--muted);font-size:1.08rem;max-width:52ch}
+.about p+p{margin-top:14px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.check{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.check i{width:34px;height:34px;border-radius:9px;background:var(--leaf-lt);color:var(--leaf);display:grid;place-items:center;flex:none}
+.check svg{width:18px;height:18px}
+.check b{display:block;font-size:.97rem;color:var(--green-dk)}
+.check span{font-size:.86rem;color:var(--muted)}
+.owner{margin-top:30px;display:flex;align-items:center;gap:14px}
+.owner .mark{width:52px;height:52px}
+.owner b{display:block;color:var(--green-dk)}
+.owner span{font-size:.88rem;color:var(--muted)}
+
+/* Gallery */
+.masonry{columns:4 250px;column-gap:14px}
+.masonry button{all:unset;cursor:zoom-in;display:block;margin-bottom:14px;break-inside:avoid;overflow:hidden;border-radius:12px}
+.masonry img{width:100%;transition:transform .8s}
+.masonry button:hover img{transform:scale(1.05)}
+.masonry button:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,20,13,.94);display:none;align-items:center;justify-content:center;padding:4vw}
+.lb.open{display:flex}
+.lb img{max-height:88vh;max-width:90vw;border-radius:8px}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:2.6rem;cursor:pointer;padding:16px;line-height:1;opacity:.8}
+.lb button:hover{opacity:1;color:#b9e08f}
+.lb .x{top:10px;right:16px}.lb .prev{left:8px;top:50%;transform:translateY(-50%)}.lb .next{right:8px;top:50%;transform:translateY(-50%)}
+
+/* Quote + contact */
+.quote{background:var(--green-dk);color:#fff;position:relative;overflow:hidden}
+.quote::before{content:"";position:absolute;inset:0;background:url("images/porch-hedges-2.jpg") center/cover;opacity:.12}
+.quote .wrap{position:relative}
+.quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start}
+.quote .eyebrow{color:#b9e08f}
+.quote h2{font-size:clamp(2.1rem,4.4vw,3.5rem);margin:14px 0 18px}
+.quote .lead{opacity:.85;font-size:1.08rem;max-width:42ch}
+.contact-list{margin-top:36px;display:grid;gap:4px}
+.ci{display:flex;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.ci:last-child{border-bottom:0}
+.ci i{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none;color:#b9e08f}
+.ci svg{width:20px;height:20px}
+.ci small{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+.ci a,.ci div>span{font-size:1.15rem;font-weight:700;color:#fff;text-decoration:none;word-break:break-word}
+.ci a:hover{color:#b9e08f}
+
+form.card{background:#fff;color:var(--ink);border-radius:18px;padding:clamp(26px,4vw,44px);box-shadow:0 40px 80px -30px rgba(0,0,0,.55)}
+.card h3{font-size:1.5rem;color:var(--green-dk)}
+.card .sub{color:var(--muted);font-size:.95rem;margin:6px 0 24px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.field label,.legend{font-size:.84rem;font-weight:700;color:var(--green-dk)}
+.field label em,.legend em{font-style:normal;font-weight:500;color:var(--muted)}
+input,textarea,select{font:500 1rem var(--font);color:var(--ink);background:var(--mist);border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;width:100%;transition:border-color .2s,background .2s}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--leaf);background:#fff}
+textarea{min-height:110px;resize:vertical}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin:9px 0 18px}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:inline-block;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;user-select:none}
+.opt input:checked+span{background:var(--green);border-color:var(--green);color:#fff}
+.opt input:focus-visible+span{outline:2px solid var(--leaf);outline-offset:2px}
+.card .btn{width:100%;margin-top:6px;padding:17px}
+.form-msg{margin-top:14px;font-size:.93rem;font-weight:600;display:none;padding:12px 14px;border-radius:10px}
+.form-msg.ok{display:block;background:var(--leaf-lt);color:var(--green-dk)}
+.form-msg.err{display:block;background:#fdecea;color:#8a1f12}
+.hp{position:absolute;left:-9999px}
+
+footer{background:#0d2617;color:rgba(255,255,255,.65);padding:30px 0;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#b9e08f;text-decoration:none}
+.callbar{display:none}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1020px){
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .plants-grid{grid-template-columns:1fr 1fr}
+  .tile.big{grid-column:span 2;grid-row:auto;min-height:340px}
+}
+@media (max-width:860px){
+  .links a:not(.btn){display:none}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .snow-grid,.about-grid,.quote-grid{grid-template-columns:1fr}
+  .snow-photos img:last-child{transform:none}
+  .est{right:14px;bottom:-24px;width:116px;height:116px}
+  .est strong{font-size:1.7rem}
+  .checks{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:8px}
+  .callbar .btn{flex:1;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+  footer{padding-bottom:100px}
+}
+@media (max-width:560px){
+  .svc-grid,.plants-grid,.grid2{grid-template-columns:1fr}
+  .tile.big{grid-column:auto}
+  .links .btn span{display:none}
+  .logo-txt span{display:none}
+  .hero-in{padding:120px 0 150px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.2-.6.6-.6z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></symbol>
+  <symbol id="i-flake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/></symbol>
+  <symbol id="i-lot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="m9 20 3-6 3 3v4M7 12l3-4 4 1 2 4"/></symbol>
+  <symbol id="i-bldg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+</svg>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="#home" aria-label="L & L Landscaping, home">
+      <span class="mark">L&amp;L</span>
+      <span class="logo-txt"><b>L &amp; L Landscaping</b><span>Cynthiana, Kentucky</span></span>
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#snow">Snow Removal</a>
+      <a href="#plants">Plants &amp; Seasonal</a>
+      <a href="#about">About</a>
+      <a href="#work">Our Work</a>
+      <a class="btn btn-leaf" href="#quote"><svg><use href="#i-mail"/></svg><span>Free Quote</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <img src="images/striped-lawn.jpg" alt="Freshly mowed lawn with clean stripes under a blue Kentucky sky">
+  <div class="wrap hero-in">
+    <div class="eyebrow">Landscaping since 2007</div>
+    <h1>Landscaping &amp; lawn care, <span>done right.</span></h1>
+    <p>Design and installation, maintenance, mowing, tree pruning and commercial snow removal for homes and businesses in and around Cynthiana, backed by more than 30 years of experience.</p>
+    <div class="ctas">
+      <a class="btn btn-leaf" href="#quote">Request a Free Quote</a>
+      <a class="btn btn-outline" href="tel:+18595089315"><svg><use href="#i-phone"/></svg>(859) 508-9315</a>
+    </div>
+    <div class="hero-trust">
+      <span><svg><use href="#i-check"/></svg>30+ years of experience</span>
+      <span><svg><use href="#i-check"/></svg>Residential &amp; commercial</span>
+      <span><svg><use href="#i-check"/></svg>Locally owned</span>
+    </div>
+  </div>
+  <svg class="hills" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 80 C 180 30, 340 30, 520 66 S 860 110, 1040 70 S 1320 20, 1440 52 L1440 120 L0 120Z" fill="#ffffff" opacity=".35"/>
+    <path d="M0 96 C 220 60, 420 70, 640 92 S 1060 116, 1260 86 S 1400 74, 1440 80 L1440 120 L0 120Z" fill="#ffffff"/>
+  </svg>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid rv">
+      <div class="stat"><strong>30+</strong><span>Years of experience</span></div>
+      <div class="stat"><strong>2007</strong><span>Landscaping since</span></div>
+      <div class="stat"><strong>All 4</strong><span>Seasons, from mowing to snow</span></div>
+      <div class="stat"><strong>1 Call</strong><span>Design, upkeep, plants &amp; plowing</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Our Services</div>
+      <h2>Everything your property needs, from one local crew.</h2>
+      <p>L &amp; L Landscaping designs, builds and maintains landscapes for homeowners and businesses, and keeps the grass cut and the trees in shape all season long.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="svc-img"><img src="images/stone-wall.jpg" alt="Stone retaining wall being installed" loading="lazy"><span class="svc-num">01</span></div>
+        <div class="svc-body">
+          <h3>Landscape Design &amp; Installation</h3>
+          <p>New beds, plantings, stonework and mulch, planned around your property and built to last.</p>
+          <ul><li>Planting beds &amp; shrubs</li><li>Stone borders &amp; walls</li><li>Mulch &amp; finishing</li></ul>
+        </div>
+      </article>
+      <article class="svc rv">
+        <div class="svc-img"><img src="images/porch-hedges.jpg" alt="Neatly trimmed hedges along a porch" loading="lazy"><span class="svc-num">02</span></div>
+        <div class="svc-body">
+          <h3>Landscape Maintenance</h3>
+          <p>Trimmed shrubs, clean beds and crisp edges, so your property always looks cared for.</p>
+          <ul><li>Shrub &amp; hedge trimming</li><li>Bed upkeep &amp; mulching</li><li>Seasonal cleanups</li></ul>
+        </div>
+      </article>
+      <article class="svc rv">
+        <div class="svc-img"><img src="images/striped-lawn.jpg" alt="Freshly mowed lawn with clean stripes" loading="lazy" style="object-position:30% 70%"><span class="svc-num">03</span></div>
+        <div class="svc-body">
+          <h3>Mowing</h3>
+          <p>Reliable, on-schedule mowing that leaves clean lines and a lawn you'll be proud of.</p>
+          <ul><li>Residential &amp; commercial</li><li>Trimming &amp; edging</li><li>Regular schedules</li></ul>
+        </div>
+      </article>
+      <article class="svc rv">
+        <div class="svc-img"><img src="images/tree-pruning.jpg" alt="Well-shaped magnolia tree in a mulched bed beside a brick house" loading="lazy" style="object-position:50% 38%"><span class="svc-num">04</span></div>
+        <div class="svc-body">
+          <h3>Minor Tree Pruning</h3>
+          <p>Careful shaping and trimming of smaller trees to keep them healthy, safe and looking good.</p>
+          <ul><li>Shaping &amp; thinning</li><li>Low limb removal</li><li>Ornamental trees</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section snow" id="snow">
+  <div class="flakes" aria-hidden="true"></div>
+  <div class="wrap snow-grid">
+    <div class="rv">
+      <div class="eyebrow">05 &middot; Commercial Snow Removal</div>
+      <h2>Your lot cleared before the doors open.</h2>
+      <p>When snow and ice hit, L &amp; L clears commercial parking lots and sidewalks so your customers and staff can get in and out safely.</p>
+      <ul class="snow-list">
+        <li><i><svg><use href="#i-lot"/></svg></i>Parking lot plowing</li>
+        <li><i><svg><use href="#i-walk"/></svg></i>Sidewalk clearing</li>
+        <li><i><svg><use href="#i-bldg"/></svg></i>Commercial properties</li>
+      </ul>
+      <a class="btn btn-sky" href="#quote"><svg><use href="#i-flake"/></svg>Ask about snow service</a>
+    </div>
+    <div class="snow-photos rv">
+      <img src="images/snow-lot.jpg" alt="Plow truck clearing a snowy commercial parking lot" loading="lazy">
+      <img src="images/snow-street.jpg" alt="Plowing a snowy road, seen from the truck cab" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plants">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Plants &amp; Seasonal</div>
+      <h2>Plants and seasonal color, ready for your yard.</h2>
+      <p>Along with our services, L &amp; L sells trees, shrubs and landscaping plants, plus seasonal favorites like mums, pumpkins and Indian corn.</p>
+    </div>
+    <div class="plants-grid">
+      <div class="tile big rv">
+        <img src="images/nursery-trees.jpg" alt="Japanese maples, magnolias and young trees in pots" loading="lazy">
+        <div class="tile-txt"><h3>Trees &amp; Landscaping Plants</h3><p>Ornamental trees, shrubs and plants for new beds and replacements.</p></div>
+      </div>
+      <div class="tile rv">
+        <img src="images/mums-mixed.jpg" alt="Mums in yellow, red, orange and purple" loading="lazy">
+        <div class="tile-txt"><h3>Mums</h3><p>Bright fall color in many shades.</p></div>
+      </div>
+      <div class="tile rv">
+        <img src="images/pumpkins.jpg" alt="Bins of orange pumpkins" loading="lazy">
+        <div class="tile-txt"><h3>Pumpkins</h3><p>For porches, steps and displays.</p></div>
+      </div>
+      <div class="tile rv">
+        <img src="images/fall-corn.jpg" alt="Indian corn and white pumpkins" loading="lazy">
+        <div class="tile-txt"><h3>Indian Corn &amp; Fall Decor</h3><p>Classic autumn touches.</p></div>
+      </div>
+      <div class="tile rv">
+        <img src="images/mums-red.jpg" alt="Deep red mums in bloom" loading="lazy">
+        <div class="tile-txt"><h3>Seasonal Color</h3><p>Stock changes through the year.</p></div>
+      </div>
+    </div>
+    <div class="stock rv">
+      <div class="stock-txt">
+        <i><svg><use href="#i-leaf"/></svg></i>
+        <div><b>Wondering what's in stock?</b><span>Inventory changes with the season. Send Donnie an email or a Facebook message to see what's available.</span></div>
+      </div>
+      <div class="btns">
+        <a class="btn btn-primary" href="mailto:llmowing@yahoo.com?subject=What's%20in%20stock%3F"><svg><use href="#i-mail"/></svg>Email</a>
+        <a class="btn btn-line" href="https://www.facebook.com/LlLandscaping" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Message on Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo rv">
+      <img src="images/sign-bed.jpg" alt="New mulch bed with lighting around a business sign" loading="lazy">
+      <div class="est"><small>Est.</small><strong>2007</strong><small>Cynthiana</small></div>
+    </div>
+    <div class="rv">
+      <div class="eyebrow">About L &amp; L</div>
+      <h2>Local, experienced and easy to work with.</h2>
+      <p>L &amp; L Landscaping is owned and operated by Donnie Baker, who brings more than 30 years of experience to every job. We've been landscaping since 2007.</p>
+      <p>Based in Cynthiana, Kentucky, we take care of homes and businesses in every season, from spring plantings and summer mowing to clearing commercial lots in winter.</p>
+      <div class="checks">
+        <div class="check"><i><svg><use href="#i-user"/></svg></i><div><b>Owner on the job</b><span>Work directly with Donnie.</span></div></div>
+        <div class="check"><i><svg><use href="#i-cal"/></svg></i><div><b>Year-round service</b><span>Mowing season to snow season.</span></div></div>
+        <div class="check"><i><svg><use href="#i-home"/></svg></i><div><b>Homes &amp; businesses</b><span>Residential and commercial.</span></div></div>
+        <div class="check"><i><svg><use href="#i-leaf"/></svg></i><div><b>Plants on hand</b><span>Trees, shrubs and seasonal color.</span></div></div>
+      </div>
+      <div class="owner"><span class="mark">DB</span><div><b>Donnie Baker</b><span>Owner, L &amp; L Landscaping</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="eyebrow">Our Work</div>
+      <h2>A look at recent projects.</h2>
+      <p>Lawns, hedges, stonework, mulch beds, snow removal and seasonal color. Tap any photo to see it larger.</p>
+    </div>
+    <div class="masonry" id="masonry">
+      <button><img src="images/striped-lawn.jpg" alt="Striped lawn" loading="lazy"></button>
+      <button><img src="images/mums-red.jpg" alt="Red mums" loading="lazy"></button>
+      <button><img src="images/stone-wall.jpg" alt="Stone wall installation" loading="lazy"></button>
+      <button><img src="images/porch-hedges.jpg" alt="Trimmed porch hedges" loading="lazy"></button>
+      <button><img src="images/pumpkins.jpg" alt="Pumpkins" loading="lazy"></button>
+      <button><img src="images/sign-bed.jpg" alt="Mulch bed around a business sign" loading="lazy"></button>
+      <button><img src="images/nursery-trees.jpg" alt="Young trees" loading="lazy"></button>
+      <button><img src="images/mums-white.jpg" alt="White and yellow mums" loading="lazy"></button>
+      <button><img src="images/snow-lot.jpg" alt="Clearing a snowy parking lot" loading="lazy"></button>
+      <button><img src="images/fall-corn.jpg" alt="Indian corn and pumpkins" loading="lazy"></button>
+      <button><img src="images/mums-purple.jpg" alt="Purple mums" loading="lazy"></button>
+      <button><img src="images/porch-hedges-2.jpg" alt="Front lawn and hedges" loading="lazy"></button>
+      <button><img src="images/mums-mixed.jpg" alt="Mixed fall mums" loading="lazy"></button>
+      <button><img src="images/snow-street.jpg" alt="Plowing snow" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="section quote" id="quote">
+  <div class="wrap quote-grid">
+    <div class="rv">
+      <div class="eyebrow">Free Quote &amp; Contact</div>
+      <h2>Let's talk about your property.</h2>
+      <p class="lead">Fill out the form and Donnie will get back to you. You can also reach us directly:</p>
+      <div class="contact-list">
+        <div class="ci"><i><svg><use href="#i-phone"/></svg></i><div><small>Phone</small><a href="tel:+18595089315">(859) 508-9315</a></div></div>
+        <div class="ci"><i><svg><use href="#i-mail"/></svg></i><div><small>Email</small><a href="mailto:llmowing@yahoo.com">llmowing@yahoo.com</a></div></div>
+        <div class="ci"><i><svg><use href="#i-fb"/></svg></i><div><small>Facebook</small><a href="https://www.facebook.com/LlLandscaping" target="_blank" rel="noopener">facebook.com/LlLandscaping</a></div></div>
+        <div class="ci"><i><svg><use href="#i-pin"/></svg></i><div><small>Based in</small><span>Cynthiana, Kentucky</span></div></div>
+      </div>
+    </div>
+
+    <!-- FORMSPREE: replace YOUR_FORM_ID below with the ID from your Formspree form (e.g. xyzabcde) -->
+    <form class="card rv" id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <h3>Request a free quote</h3>
+      <p class="sub">Tell us a little about the job. Please leave a phone number or an email so we can reach you.</p>
+      <input type="hidden" name="_subject" value="New quote request from the L & L website">
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="grid2">
+        <div class="field"><label for="f-phone">Phone <em>(optional)</em></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-email">Email <em>(optional)</em></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="f-addr">Address or town</label><input id="f-addr" name="address" type="text" autocomplete="street-address" placeholder="e.g. Cynthiana, KY"></div>
+      <div class="legend">What do you need? <em>(choose any)</em></div>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" name="services" value="Landscape design & installation"><span>Design &amp; installation</span></label>
+        <label class="opt"><input type="checkbox" name="services" value="Landscape maintenance"><span>Maintenance</span></label>
+        <label class="opt"><input type="checkbox" name="services" value="Mowing"><span>Mowing</span></label>
+        <label class="opt"><input type="checkbox" name="services" value="Minor tree pruning"><span>Tree pruning</span></label>
+        <label class="opt"><input type="checkbox" name="services" value="Commercial snow removal"><span>Snow removal</span></label>
+        <label class="opt"><input type="checkbox" name="services" value="Plants & seasonal items"><span>Plants &amp; seasonal</span></label>
+      </div>
+      <div class="field"><label for="f-msg">Tell us about the job</label><textarea id="f-msg" name="message" placeholder="Size of the yard, what you'd like done, timing..."></textarea></div>
+      <button class="btn btn-leaf" type="submit">Send my quote request</button>
+      <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> L &amp; L Landscaping &middot; Donnie Baker, Owner &middot; Cynthiana, KY</span>
+    <span><a href="tel:+18595089315">(859) 508-9315</a> &middot; <a href="mailto:llmowing@yahoo.com">llmowing@yahoo.com</a></span>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-primary" href="tel:+18595089315"><svg><use href="#i-phone"/></svg>Call</a>
+  <a class="btn btn-leaf" href="#quote">Free Quote</a>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="x" aria-label="Close">&times;</button>
+  <button class="prev" aria-label="Previous photo">&#8249;</button>
+  <img alt="">
+  <button class="next" aria-label="Next photo">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  function onScroll(){hdr.classList.toggle('solid',window.scrollY>50)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  } else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+
+  var fl=document.querySelector('.flakes');
+  for(var i=0;i<45;i++){var s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.animationDuration=(7+Math.random()*9)+'s';s.style.animationDelay=(-Math.random()*14)+'s';var z=2+Math.random()*5;s.style.width=s.style.height=z+'px';fl.appendChild(s)}
+
+  var lb=document.getElementById('lb'),big=lb.querySelector('img'),btns=[].slice.call(document.querySelectorAll('#masonry button')),cur=0;
+  function show(i){cur=(i+btns.length)%btns.length;var im=btns[cur].querySelector('img');big.src=im.src;big.alt=im.alt}
+  btns.forEach(function(b,i){b.addEventListener('click',function(){show(i);lb.classList.add('open')})});
+  lb.querySelector('.x').onclick=function(){lb.classList.remove('open')};
+  lb.querySelector('.prev').onclick=function(e){e.stopPropagation();show(cur-1)};
+  lb.querySelector('.next').onclick=function(e){e.stopPropagation();show(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+
+  var form=document.getElementById('quoteForm'),msg=document.getElementById('formMsg');
+  function say(t,ok){msg.textContent=t;msg.className='form-msg '+(ok?'ok':'err')}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var F=form.elements,name=F['name'].value.trim(),ph=F['phone'].value.trim(),em=F['email'].value.trim();
+    if(!name){say('Please enter your name.');F['name'].focus();return}
+    if(!ph&&!em){say('Please leave a phone number or an email so Donnie can reach you.');F['phone'].focus();return}
+    if(em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){say('That email address doesn\'t look quite right.');F['email'].focus();return}
+    if(form.getAttribute('action').indexOf('YOUR_FORM_ID')>-1){say('The quote form isn\'t connected yet. Please call (859) 508-9315 or email llmowing@yahoo.com.');return}
+    var b=form.querySelector('button[type=submit]');b.disabled=true;b.textContent='Sending...';
+    fetch(form.getAttribute('action'),{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){if(!r.ok)throw 0;form.reset();say('Thanks! Your request was sent. Donnie will be in touch soon.',true)})
+      .catch(function(){say('Sorry, something went wrong sending the form. Please call (859) 508-9315 or email llmowing@yahoo.com.')})
+      .then(function(){b.disabled=false;b.textContent='Send my quote request'});
+  });
+})();
+</script>
+</body>
+</html>
