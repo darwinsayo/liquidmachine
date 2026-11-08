@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://liquidmachine.com/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --sheet:#EDEFEC;      /* cool grey-green paper */
@@ -40,7 +40,8 @@
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{background:var(--sheet);color:var(--ink);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05}
+h1,h2,h3{font-family:"Inter Tight",system-ui,sans-serif;letter-spacing:-.022em;line-height:1.06}
+h3{letter-spacing:-.012em}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
@@ -48,8 +49,8 @@ a{color:inherit}
 /* header */
 header{position:absolute;inset:0 0 auto 0;z-index:5;padding:22px 0;color:#fff}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:12px;font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
-.mark{width:36px;height:36px;border-radius:10px;background:#fff;color:var(--ink);display:grid;place-items:center;font:800 .95rem "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;position:relative}
+.brand{display:flex;align-items:center;gap:12px;font:700 1.25rem "Inter Tight",sans-serif;text-decoration:none;letter-spacing:-.015em}
+.mark{width:36px;height:36px;border-radius:10px;background:#fff;color:var(--ink);display:grid;place-items:center;font:700 .95rem "Inter Tight",sans-serif;letter-spacing:-.04em;position:relative}
 .mark::after{content:"";position:absolute;right:5px;top:5px;width:6px;height:6px;border-radius:2px;background:var(--signal)}
 nav{display:flex;gap:26px;align-items:center;font-weight:500}
 nav a{text-decoration:none;color:rgba(255,255,255,.88)}
@@ -70,7 +71,7 @@ nav .btn{padding:10px 20px}
     url("/hero.jpg") 72% center/cover no-repeat,#2A3646}
 .hero .wrap{width:min(1120px,100% - 40px)}
 .hero .copy{max-width:540px}
-.hero h1{font-size:clamp(2.7rem,5.4vw,4.9rem);font-weight:800;margin-bottom:22px;text-shadow:0 2px 24px rgba(22,30,43,.35)}
+.hero h1{font-size:clamp(2.7rem,5.4vw,4.9rem);font-weight:700;margin-bottom:22px;text-shadow:0 2px 24px rgba(22,30,43,.35)}
 .hero p.lead{font-size:1.2rem;color:rgba(255,255,255,.88);max-width:34ch;margin-bottom:32px}
 .hero .actions{display:flex;gap:14px;flex-wrap:wrap}
 .hero .call{margin-top:26px;font-size:.98rem;color:rgba(255,255,255,.75)}
@@ -82,20 +83,20 @@ nav .btn{padding:10px 20px}
 /* services */
 .services{position:relative;margin-top:-28px;background:var(--ink);color:#fff;padding:96px 0 100px;border-radius:var(--r-lg) var(--r-lg) 0 0}
 .services .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
-.services h2{font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:800;position:sticky;top:32px;align-self:start}
+.services h2{font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:700;position:sticky;top:32px;align-self:start}
 .services h2 span{display:block;color:var(--signal-soft);font-weight:400;font-size:.45em;letter-spacing:0;margin-top:18px;line-height:1.5;max-width:30ch;font-family:"Instrument Sans",sans-serif}
 .svc{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;padding:28px 0;border-top:1px solid rgba(255,255,255,.18)}
 .svc:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
 .svc .art{width:150px;height:103px;border-radius:16px;background:#1F2A3B;display:grid;place-items:center;overflow:hidden}
 .svc .art svg{width:100%;height:100%}
-.svc .art text{font-family:"Bricolage Grotesque",sans-serif}
+.svc .art text{font-family:"Inter Tight",sans-serif}
 .svc h3{font-size:1.7rem;font-weight:600;margin-bottom:8px}
 .svc p{color:#C4CAD3;max-width:46ch}
 
 /* recent work */
 .work{padding:96px 0}
 .work .head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:44px}
-.work h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:800;max-width:18ch}
+.work h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:700;max-width:18ch}
 .work .sub{color:var(--ink-soft);max-width:44ch}
 .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .proj{display:flex;flex-direction:column;text-decoration:none;background:var(--paper);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 30px 60px -36px rgba(22,30,43,.45);transition:transform .25s ease,box-shadow .25s ease}
@@ -114,7 +115,7 @@ nav .btn{padding:10px 20px}
 .proj.wide .cap{grid-column:2;grid-row:1/3;align-self:center;padding:36px 40px}
 .proj .cap{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
 .proj .tag{align-self:flex-start;font:600 .78rem "Instrument Sans",sans-serif;color:var(--pine);background:#D5EBE3;padding:3px 11px;border-radius:999px}
-.proj h3{font-size:1.6rem;font-weight:800;margin:14px 0 10px}
+.proj h3{font-size:1.6rem;font-weight:700;margin:14px 0 10px}
 .proj p{color:var(--ink-soft);max-width:44ch}
 .proj .visit{align-self:flex-start;margin-top:auto;padding-top:18px;font-weight:600;color:var(--ink);border-bottom:2px solid var(--signal);transition:border-color .2s}
 .proj:hover .visit{border-color:var(--ink)}
@@ -122,11 +123,11 @@ nav .btn{padding:10px 20px}
 /* dashboard showcase */
 .board{padding:96px 0;background:var(--paper)}
 .board .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
-.board h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:800;margin-bottom:20px}
+.board h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:700;margin-bottom:20px}
 .board p{color:var(--ink-soft);max-width:44ch;margin-bottom:14px}
 .card{background:var(--sheet);border-radius:var(--r-lg);padding:26px;box-shadow:0 30px 60px -30px rgba(22,30,43,.35)}
 .card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
-.card-head b{font:800 1.15rem "Bricolage Grotesque",sans-serif}
+.card-head b{font:700 1.15rem "Inter Tight",sans-serif}
 .card-head small{color:var(--ink-soft)}
 .job{display:grid;grid-template-columns:1fr auto;gap:4px 12px;background:var(--paper);padding:14px 16px;border-radius:var(--r-sm);margin-bottom:10px}
 .job span{font-size:.92rem;color:var(--ink-soft)}
@@ -151,10 +152,10 @@ nav .btn{padding:10px 20px}
 
 /* process */
 .process{padding:96px 0}
-.process h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:800;margin-bottom:48px;max-width:16ch}
+.process h2{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:700;margin-bottom:48px;max-width:16ch}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);counter-reset:s}
 .step{padding:0 28px 0 0;position:relative}
-.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font:800 1.1rem "Bricolage Grotesque",sans-serif;margin-bottom:22px;position:relative;z-index:1}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font:700 1.1rem "Inter Tight",sans-serif;margin-bottom:22px;position:relative;z-index:1}
 .step::after{content:"";position:absolute;top:22px;left:44px;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 16px);opacity:.35}
 .step:last-child::after{display:none}
 .step h3{font-size:1.5rem;font-weight:600;margin-bottom:8px}
@@ -163,12 +164,12 @@ nav .btn{padding:10px 20px}
 /* contact */
 .contact{padding:0 0 90px}
 .contact .box{background:var(--signal);color:var(--on-signal);border-radius:var(--r-lg);padding:64px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.contact h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800}
+.contact h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:700}
 .contact p{margin-top:14px;max-width:38ch}
 .contact .btn{background:var(--ink);color:#fff;font-size:1.1rem;padding:18px 34px}
 .contact .btn:hover{background:#000}
 .contact small{display:block;margin-top:14px}
-.contact .phone{display:block;font:800 clamp(1.8rem,3.2vw,2.6rem) "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;text-decoration:none;margin-bottom:18px}
+.contact .phone{display:block;font:700 clamp(1.8rem,3.2vw,2.6rem) "Inter Tight",sans-serif;letter-spacing:-.02em;text-decoration:none;margin-bottom:18px}
 .contact .phone:hover{text-decoration:underline;text-underline-offset:6px}
 footer{padding:0 0 40px;color:var(--ink-soft);font-size:.95rem}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
