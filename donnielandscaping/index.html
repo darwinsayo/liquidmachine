@@ -261,6 +261,11 @@ footer a{color:#b9e08f;text-decoration:none}
   .hero-in{padding:120px 0 150px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+/* snow season hero */
+.hero::after{background:linear-gradient(100deg,rgba(14,32,48,.88) 0%,rgba(14,32,48,.62) 45%,rgba(14,32,48,.12) 80%)}
+.hero .eyebrow,.hero h1 span,.hero-trust svg{color:#a9d4ef}
+.hero .btn-leaf{background:#3d86b8;box-shadow:0 10px 24px -12px rgba(36,90,126,.8)}
+.hero .btn-leaf:hover{background:#2f6f9c}
 </style>
 </head>
 <body>
@@ -299,19 +304,19 @@ footer a{color:#b9e08f;text-decoration:none}
 </header>
 
 <section class="hero" id="home">
-  <img src="images/striped-lawn.jpg" alt="Freshly mowed lawn with clean stripes under a blue Kentucky sky">
+  <img src="images/snow-lot.jpg" alt="Plow truck clearing a snowy commercial parking lot" style="object-position:center 55%">
   <div class="wrap hero-in">
-    <div class="eyebrow">Landscaping since 2007</div>
-    <h1>Landscaping &amp; lawn care, <span>done right.</span></h1>
-    <p>Design and installation, maintenance, mowing, tree pruning and commercial snow removal for homes and businesses in and around Cynthiana, backed by more than 30 years of experience.</p>
+    <div class="eyebrow">Commercial snow removal &middot; Cynthiana, KY</div>
+    <h1>Snow on the lot? <span>We've got it cleared.</span></h1>
+    <p>L &amp; L clears commercial parking lots and sidewalks all winter, so your customers and staff get in and out safely. Now booking for the season.</p>
     <div class="ctas">
-      <a class="btn btn-leaf" href="#quote">Request a Free Quote</a>
+      <a class="btn btn-leaf" href="#quote">Get on the snow list</a>
       <a class="btn btn-outline" href="tel:+18595089315"><svg><use href="#i-phone"/></svg>(859) 508-9315</a>
     </div>
     <div class="hero-trust">
+      <span><svg><use href="#i-check"/></svg>Parking lots</span>
+      <span><svg><use href="#i-check"/></svg>Sidewalks</span>
       <span><svg><use href="#i-check"/></svg>30+ years of experience</span>
-      <span><svg><use href="#i-check"/></svg>Residential &amp; commercial</span>
-      <span><svg><use href="#i-check"/></svg>Locally owned</span>
     </div>
   </div>
   <svg class="hills" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
